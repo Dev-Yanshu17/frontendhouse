@@ -10,6 +10,7 @@ import Services from "./pages/Services/Services";
 import ServiceDetail from "./pages/Services/ServiceDetail";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/AboutUs/AboutUs";
+import Inquiry from "./pages/Inquiry/Inquiry";
 import Login from "./pages/AdminLogin/AdminLogin";
 
 // Components
@@ -33,6 +34,7 @@ function App() {
         <Route path="/properties" element={<Properties />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<ServiceDetail />} />
+        <Route path="/inquiry/:serviceName" element={<Inquiry />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />

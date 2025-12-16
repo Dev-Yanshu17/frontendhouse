@@ -67,16 +67,16 @@ const Footer = () => {
         <div className="footer-col">
           <h3 className="footer-title">Quick Links</h3>
           <ul>
-            <li><Link to="/our-story">Our Story</Link></li>
-            <li><Link to="/careers">Careers</Link></li>
-            <li><Link to="/team">Our Team</Link></li>
-            <li><Link to="/resources">Resources</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/properties">Propertices</Link></li>
+            <li><Link to="/Services">Services</Link></li>
+            <li><Link to="/About">About</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
           </ul>
         </div>
 
         {/* Support */}
-        <div className="footer-col">
+        {/* <div className="footer-col">
           <h3 className="footer-title">Support</h3>
           <ul>
             <li><Link to="/faq">FAQ</Link></li>
@@ -85,7 +85,7 @@ const Footer = () => {
             <li><Link to="/terms">Terms of Service</Link></li>
             <li><Link to="/privacy">Privacy Policy</Link></li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Newsletter */}
         <div className="footer-col newsletter-col">
@@ -114,7 +114,7 @@ const Footer = () => {
           </form>
 
           {/* Social Media */}
-          <div className="social-section">
+          {/* <div className="social-section">
             <h4 className="social-title">Connect With Us</h4>
             <div className="footer-social">
               <Link to="#" className="social-icon facebook"><FaFacebookF /></Link>
@@ -123,7 +123,7 @@ const Footer = () => {
               <Link to="#" className="social-icon linkedin"><FaLinkedinIn /></Link>
               <Link to="#" className="social-icon youtube"><FaYoutube /></Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

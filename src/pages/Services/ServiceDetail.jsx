@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ServiceDetail.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -97,7 +98,8 @@ import {
   GiCat,
   GiBeachBall,
   GiExitDoor,
-  GiFireExtinguisher
+  GiFireExtinguisher,
+  GiWaterDivinerStick
 } from "react-icons/gi";
 
 /* Material Icons */
@@ -180,6 +182,14 @@ const iconMap = {
   "Bike Parking": <FaBicycle />,
   "Visitor Parking": <MdOutlineDirectionsCar />,
   "Underground Parking": <MdOutlineDirectionsCar />,
+
+  // Drainage & Sewage
+"Drainage System": <GiWaterDrop />,
+"Underground Drainage": <GiWaterDrop />,
+"Sewage System": <GiWaterTank />,
+"Storm Water Drain": <GiWaterDrop />,
+"Water Drainage": <GiWaterDrop />,
+
 
   // Club & Community
   "Club House": <GiTennisCourt />,
@@ -595,15 +605,13 @@ const ServiceDetail = () => {
           </div>
         </div>
 
-        
-
         {/* Call to Action */}
         <div className="cta-section" data-aos="fade-up">
           <h3>Ready to Experience Premium Service?</h3>
           <p>Contact us today to learn more about this service and how it can benefit you.</p>
-          <a href="#contact" className="cta-button">
-            Get In Touch
-          </a>
+          <Link to={`/inquiry/${encodeURIComponent(service.title)}`} className="cta-button">
+  Inquiry
+</Link>
         </div>
       </div>
     </div>

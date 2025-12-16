@@ -5,13 +5,13 @@ import "./Contact.css";
 const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
+    // lastName: "",
     email: "",
     phone: "",
-    projectType: "",
+    // projectType: "",
     location: "",
-    subject: "",
-    message: "",
+    // subject: "",
+    // message: "",
   });
 
   const [successMsg, setSuccessMsg] = useState("");
@@ -31,13 +31,13 @@ const Contact = () => {
       setSuccessMsg(res.data.message);
       setFormData({
         firstName: "",
-        lastName: "",
+        // lastName: "",
         email: "",
         phone: "",
-        projectType: "",
+        // projectType: "",
         location: "",
-        subject: "",
-        message: "",
+        // subject: "",
+        // message: "",
       });
     } catch (error) {
       setErrorMsg(error.response?.data?.error || "Server error");
@@ -112,14 +112,14 @@ const Contact = () => {
         required
       />
 
-      <input
+      {/* <input
         type="text"
         name="lastName"
         placeholder="Last Name"
         value={formData.lastName}
         onChange={handleChange}
         required
-      />
+      /> */}
     </div>
 
     <div className="two-col">
@@ -143,7 +143,7 @@ const Contact = () => {
     </div>
 
     <div className="two-col">
-      <select
+      {/* <select
         name="projectType"
         value={formData.projectType}
         onChange={handleChange}
@@ -153,7 +153,7 @@ const Contact = () => {
         <option value="Row-House">Row-House</option>
         <option value="Bungalow">Bungalow</option>
         <option value="Flats">Flats</option>
-      </select>
+      </select> */}
 
       <input
         type="text"
@@ -165,7 +165,7 @@ const Contact = () => {
       />
     </div>
     
-    <div className="subject">
+    {/* <div className="subject">
       <input
       type="text"
       name="subject"
@@ -174,8 +174,8 @@ const Contact = () => {
       onChange={handleChange}
       required
     />
-    </div>
- <div className="subject1">
+    </div> */}
+ {/* <div className="subject1">
     <textarea
       name="message"
       placeholder="Message"
@@ -183,7 +183,7 @@ const Contact = () => {
       onChange={handleChange}
       required
     ></textarea>
- </div>
+ </div> */}
     
     
 

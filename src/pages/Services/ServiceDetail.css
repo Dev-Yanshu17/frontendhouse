@@ -192,7 +192,7 @@
   display: inline-block;
 }
 
-.section-header h2::after {
+/* .section-header h2::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -202,7 +202,7 @@
   height: 4px;
   background: var(--gradient-primary);
   border-radius: 2px;
-}
+} */
 
 .section-header p {
   color: var(--gray-color);
@@ -432,6 +432,7 @@
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
 
 /* ===== CTA SECTION ===== */
 .cta-section {
