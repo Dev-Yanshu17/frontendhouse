@@ -1,0 +1,47 @@
+.properties-page {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.properties-hero {
+  height: 40vh;
+  background: #0f4c81;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 5%;
+}
+
+.properties-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.properties-hero p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Properties Grid */
+.properties-grid-section {
+  padding: 50px 5%;
+  background-color: #f5f5f5;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+@media (max-width: 768px) {
+  .properties-hero h1 {
+    font-size: 2rem;
+  }
+  .properties-hero p {
+    font-size: 1rem;
+  }
+}

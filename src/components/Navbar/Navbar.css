@@ -1,0 +1,368 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background: linear-gradient(135deg, #0f4c81 0%, #1a5f9a 100%);
+  color: #fff;
+  height: 130px;
+  position: sticky;
+  top: 0;
+  font-size: 18px;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* LOGO SECTION - NO CIRCLE, NO MOVEMENT */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+.logo-icon {
+  width: 150px; /* Increased size since no circle constraint */
+  height: 150px; /* Adjusted for rectangular logo */
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease; /* Only filter transition */
+  /* REMOVED circle styles */
+  border-radius: 0; /* Changed from 50% */
+  border: none; /* Removed border */
+  background: none; /* Removed gradient background */
+  padding: 0; /* Removed padding */
+  animation: none;
+  transform: none;
+}
+
+/* No hover effects that create circles */
+.logo-icon:hover {
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.2));
+  /* No border or transform on hover */
+  transform: none;
+  box-shadow: none;
+}
+
+/* Typing text container */
+.typing-container {
+  position: relative;
+  width: 200px; /* Increased to accommodate full text */
+}
+
+.typing-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #fff, #e7e6e1, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: typing 3.5s steps(30) forwards, 
+             shine 4s linear infinite,
+             fadeIn 1s ease-out;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: visible; /* Changed from hidden to visible */
+  vertical-align: middle;
+}
+
+@keyframes typing {
+  from { 
+    opacity: 0;
+    width: 0; 
+  }
+  to { 
+    opacity: 1;
+    width: 320px; /* Increased to show full text */
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .typing-container {
+    min-width: 220px; /* Adjusted for mobile */
+  }
+  
+  .typing-text {
+    font-size: 1rem;
+    animation: typing 2.5s steps(20) forwards, 
+               shine 3s linear infinite;
+  }
+  
+  @keyframes typing {
+    to { width: 220px; } /* Adjusted for mobile */
+  }
+}
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8a5244, #b17140);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links li a:hover {
+  color: #feb47b;
+  transform: translateY(-2px);
+  text-shadow: 0 2px 10px rgba(254, 180, 123, 0.5);
+}
+
+.nav-links li a:hover::before {
+  width: 80%;
+}
+
+/* Active link styling */
+.nav-links li a.active {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.login-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 126, 95, 0.5);
+}
+
+.login-btn:hover::before {
+  left: 100%;
+}
+
+.login-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    gap: 15px;
+  }
+  
+  .logo-icon {
+    width: 100px; /* Adjusted for mobile */
+    height: 50px;
+    /* No circle styles */
+    border-radius: 0;
+    border: none;
+    background: none;
+  }
+  
+  .typing-container {
+    min-width: 180px;
+  }
+  
+  .typing-text {
+    font-size: 1rem;
+    animation: typing 2.5s steps(20) forwards, 
+               shine 3s linear infinite;
+  }
+  
+  @keyframes typing {
+    to { width: 180px; }
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 76, 129, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 80px 20px 40px;
+    z-index: 1000;
+  }
+  
+  .nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-links li a {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Navbar entry animation - ONLY for navbar itself */
+.navbar {
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add a subtle pulse effect to active navigation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 126, 95, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 126, 95, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 126, 95, 0); }
+}
+
+.login-btn:focus {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .logo {
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    width: 80px;
+    height: 40px;
+  }
+  
+  .typing-container {
+    min-width: 150px;
+  }
+  
+  .typing-text {
+    font-size: 0.9rem;
+  }
+  
+  @keyframes typing {
+    to { width: 150px; }
+  }
+}
+
+/* Ensure logo stays completely static and has no circle */
+.logo-icon,
+.logo-icon:hover,
+.logo-icon:active,
+.logo-icon:focus {
+  animation: none !important;
+  transform: none !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 0 !important;
+  border: none !important;
+  background: none !important;
+}
