@@ -212,6 +212,15 @@ const iconMap = {
   "CCTV Surveillance": <FaCamera />,
   "Security Guard": <MdSecurity />,
 
+  // Children Area
+"Children Play Area": <MdOutlineToys />,
+"Childrens Play Area": <MdOutlineToys />,
+"Children’s play area": <FaChild />,
+"Children's play area": <MdOutlineToys />,
+"Kids Play Area": <MdOutlineToys />,
+"Kids Zone": <FaChild />,
+
+
   // Internet & Connectivity
   "WiFi": <FaWifi />,
   "High Speed Internet": <FaWifi />,
@@ -239,7 +248,7 @@ const iconMap = {
   "Solar Panel": <FaSun />,
 
   // Recreation & Sports
-  "Swimming Pool": <FaSwimmingPool />,
+  "Swimming Pool": <MdOutlinePool />,
   "Pool": <MdOutlinePool />,
   "Kids Pool": <MdOutlinePool />,
   "Gym": <FaDumbbell />,

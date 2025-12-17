@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./Inquiry.css";
+import logo from "../../images/logo_removed_bg.png";
 
 const Inquiry = () => {
   const { serviceName } = useParams();
@@ -46,6 +47,7 @@ const Inquiry = () => {
 
   return (
     <div className="inquiry-page">
+      <img src={logo} alt="logo" className="logo-icon" />
       <div className="inquiry-card">
         <h2>Service Inquiry</h2>
 

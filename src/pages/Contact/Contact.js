@@ -86,13 +86,7 @@ const Contact = () => {
           <h3 className="hours-title">Opening Hours</h3>
           <p>Thu – Tue 10:00 AM – 07:00 PM</p>
 
-          <div className="social-icons">
-            <span>📘</span>
-            <span>🐦</span>
-            <span>📸</span>
-            <span>💼</span>
-            <span>▶️</span>
-          </div>
+          
         </div>
 
         {/* <div className="contact-table-box"> */}

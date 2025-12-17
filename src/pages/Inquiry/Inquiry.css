@@ -3,8 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://images.pexels.com/photos/6238613/pexels-photo-6238613.jpeg")
+  /* background: url("https://images.pexels.com/photos/16191738/pexels-photo-16191738.jpeg")
     center/cover no-repeat;
+    opacity: 20%; */
     
 }
 
