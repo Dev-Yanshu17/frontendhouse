@@ -62,18 +62,15 @@ const Contact = () => {
            We’re here to guide you every step of the way. Whether you’re looking for your dream home or planning a new project, our team is ready to assist you.
           </p>
 
-          <div className="info-row">
+          <div classname="info-row-for">
+            <div className="info-row">
             <span className="info-row span">📞</span>
-            <div>
-              <p>+0253-4065472</p>
-            </div>
+            <p>+0253-4065472</p>
           </div>
 
           <div className="info-row">
             <span className="info-row span1">📧</span>
-            <div>
-              <p>info@dreamdwello.com</p>
-            </div>
+            <p>info@dreamdwello.com</p>
           </div>
 
           <div className="info-row">
@@ -82,6 +79,10 @@ const Contact = () => {
               Plot no.2, main street ,NYC, USA – 10044
             </div>
           </div>
+
+          </div>
+
+          
 
           <h3 className="hours-title">Opening Hours</h3>
           <p>Thu – Tue 10:00 AM – 07:00 PM</p>
