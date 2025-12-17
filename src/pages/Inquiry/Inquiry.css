@@ -1,16 +1,16 @@
 .inquiry-page {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: url("https://images.pexels.com/photos/16191738/pexels-photo-16191738.jpeg")
-    center/cover no-repeat;
-    opacity: 20%; */
+  background-color: aliceblue;
+    opacity:98%;
     
 }
 
 .inquiry-card {
-  width: 380px;
+  width: 500px;
+  height: 450px;
   padding: 30px;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   border-radius: 12px;
@@ -53,7 +53,7 @@
 }
 
 .success {
-  color: #00ffae;
+  color: #71ffd2;
   margin-bottom: 10px;
 }
 

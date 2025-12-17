@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="logo-container">
             <img src={logo} alt="DreamHome Logo" className="logo-icon1" />
             <div className="logo-text-container">
-              <h2 className="logo-text">DreamHome</h2>
+              <h2 className="logo-text">DreamDWello</h2>
               <p className="logo-tagline">Your Dream Home Awaits</p>
             </div>
           </div>
@@ -130,7 +130,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="footer-bottom-content">
-          <p>© {new Date().getFullYear()} DreamHome. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DreamDWello. All rights reserved.</p>
           <div className="footer-bottom-links">
             <Link to="/privacy">Privacy Policy</Link>
             <span className="divider">|</span>

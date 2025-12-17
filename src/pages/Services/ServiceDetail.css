@@ -371,7 +371,7 @@
 
 .highlight-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(  -fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
@@ -717,6 +717,17 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-dark);
 }
+.amenities-note {
+  width: 100%;
+  text-align: center;
+  margin: 40px auto 0;
+  font-size: 14px;
+  color: #6b7280; /* darker gray so visible */
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
 
 /* ===== DECORATIVE ELEMENTS ===== */
 .detail-content::before {

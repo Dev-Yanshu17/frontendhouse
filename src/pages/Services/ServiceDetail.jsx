@@ -54,6 +54,9 @@ import {
   FaCat,
   FaUmbrellaBeach,
   FaFireExtinguisher,
+  FaFilm,
+  FaChair,
+  FaVolumeUp,
   FaRoad as FaRoadIcon
 } from "react-icons/fa";
 
@@ -99,7 +102,12 @@ import {
   GiBeachBall,
   GiExitDoor,
   GiFireExtinguisher,
-  GiWaterDivinerStick
+  GiWaterDivinerStick,
+  GiCinema, 
+   GiFilmProjector,
+  GiPopcorn,
+  GiTicket,
+  GiTheater,
 } from "react-icons/gi";
 
 /* Material Icons */
@@ -199,6 +207,17 @@ const iconMap = {
   "Banquet Hall": <MdOutlineHouse />,
   "Common Area": <MdOutlineHouse />,
   "Meeting Room": <MdOutlineHouse />,
+
+ // 🎬 Movie Theater & Cinema
+"Movie Theater": <GiTheater />,
+"Cinema Hall": <GiTheater />,
+"Movie Screen": <GiFilmProjector />,
+"Popcorn & Snacks": <GiPopcorn />,
+"Movie Tickets": <GiTicket />,
+"Film Show": <FaFilm />,
+"Comfortable Seating": <FaChair />,
+"Surround Sound": <FaVolumeUp />,
+
 
   // Security
   "Security": <MdSecurity />,
@@ -594,7 +613,7 @@ const ServiceDetail = () => {
         <div className="amenities-section" data-aos="fade-up">
           <div className="section-header">
             <h2>Project Amenities</h2>
-            <p>All amenities available with this service</p>
+            {/* <p>All amenities available with this service</p> */}
           </div>
           
           <div className="amenities-grid">
@@ -607,7 +626,7 @@ const ServiceDetail = () => {
                 </div>
                 <div className="amenity-text">
                   <h4>{amenity}</h4>
-                  <p>Available with premium quality standards</p>
+                  {/* <p>Available with premium quality standards</p> */}
                 </div>
               </div>
             ))}

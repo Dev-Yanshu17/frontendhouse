@@ -126,7 +126,7 @@ const AboutUs = () => {
       </section>
 
       {/* TEAM */}
-      <section className="team-section">
+      {/* <section className="team-section">
         <h2 className="center">Meet Our Team</h2>
 
         <div className="team-cards">
@@ -138,7 +138,7 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="cta-section">
