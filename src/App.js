@@ -11,7 +11,7 @@ import ServiceDetail from "./pages/Services/ServiceDetail";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/AboutUs/AboutUs";
 import Inquiry from "./pages/Inquiry/Inquiry";
-import Login from "./pages/AdminLogin/AdminLogin";
+//import Login from "./pages/AdminLogin/AdminLogin";
 
 // Components
 import Navbar from "./components/Navbar/Navbar";
@@ -36,7 +36,7 @@ function App() {
         <Route path="/services/:id" element={<ServiceDetail />} />
         <Route path="/inquiry/:serviceName" element={<Inquiry />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/about" element={<About />} />
       </Routes>
       <Header />
