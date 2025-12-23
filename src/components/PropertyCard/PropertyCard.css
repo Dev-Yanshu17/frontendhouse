@@ -1,18 +1,19 @@
 .property-card {
-  background-color: #fff;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .property-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
-.property-img {
+.property-image {
   width: 100%;
-  height: 180px;
+  height: 900px;
   object-fit: cover;
 }
 
@@ -21,13 +22,10 @@
 }
 
 .property-info h3 {
-  margin: 0;
-  font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
-.property-info p {
-  margin: 3px 0;
-  color: #555;
-  font-size: 0.95rem;
+.property-info span {
+  color: #0a58ca;
+  font-weight: bold;
 }

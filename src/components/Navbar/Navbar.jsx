@@ -10,63 +10,46 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  /* =========================
-     RESPONSIVE HANDLER
-  ========================= */
+  // ================= RESPONSIVE =================
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* =========================
-     LOGO CLICK (NO REFRESH)
-  ========================= */
+  // ================= LOGO CLICK =================
   const handleLogoClick = () => {
     setMenuOpen(false);
-
-    // ✅ CASE 1: Already on Home → ONLY scroll to top
     if (location.pathname === "/") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-      return; // 🚫 STOP HERE (NO NAVIGATION)
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
     }
-
-    // ✅ CASE 2: On another page → Navigate to Home
-    navigate("/");
   };
+
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/properties", label: "Properties" },
+    { path: "/services", label: "Services" },
+    { path: "/about", label: "About" },
+    { path: "/contact", label: "Contact" },
+  ];
 
   return (
     <nav className="navbar">
-      {/* =========================
-          LOGO (NO LINK)
-      ========================= */}
+      {/* LOGO */}
       <div className="logo" onClick={handleLogoClick}>
         <img src={logo} alt="DreamDwello Logo" className="logo-icon" />
         <div className="typing-container">
-          <span className="typing-text">
-            Find your dream home today.
-          </span>
+          <span className="typing-text">Find your dream home today.</span>
         </div>
       </div>
 
-      {/* =========================
-          DESKTOP MENU
-      ========================= */}
+      {/* NAV LINKS */}
       {!isMobile ? (
         <ul className="nav-links">
-          {[
-            { path: "/", label: "Home" },
-            { path: "/properties", label: "Properties" },
-            { path: "/services", label: "Services" },
-            { path: "/about", label: "About" },
-            { path: "/contact", label: "Contact" }
-          ].map((item) => (
+          {navItems.map((item) => (
             <li key={item.path}>
               <Link
                 to={item.path}
@@ -76,18 +59,10 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-
-          <li>
-            <Link to="/login" className="login-btn">
-              Login
-            </Link>
-          </li>
         </ul>
       ) : (
         <>
-          {/* =========================
-              HAMBURGER
-          ========================= */}
+          {/* HAMBURGER */}
           <button
             className={`hamburger ${menuOpen ? "open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -97,18 +72,9 @@ const Navbar = () => {
             <span></span>
           </button>
 
-          {/* =========================
-              MOBILE MENU
-          ========================= */}
+          {/* MOBILE MENU */}
           <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-            {[
-              { path: "/", label: "Home" },
-              { path: "/properties", label: "Properties" },
-              { path: "/services", label: "Services" },
-              { path: "/about", label: "About" },
-              { path: "/contact", label: "Contact" },
-              { path: "/login", label: "Login" }
-            ].map((item) => (
+            {navItems.map((item) => (
               <li key={item.path}>
                 <Link
                   to={item.path}

@@ -1,63 +1,31 @@
-import React, { useState } from "react";
-import "./Properties.css";
-import Navbar from "../../components/Navbar/Navbar";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import PropertyCard from "../../components/PropertyCard/PropertyCard";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import "./Properties.css";
 
 const Properties = () => {
-  const properties = [
-    {
-      id: 1,
-      title: "Modern 3 BHK House",
-      location: "Ahmedabad, Gujarat",
-      price: 8500000,
-      bedrooms: 3,
-      area: 1500,
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
-    },
-    {
-      id: 2,
-      title: "Luxury Villa with Pool",
-      location: "Surat, Gujarat",
-      price: 14500000,
-      bedrooms: 4,
-      area: 2200,
-      image: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800",
-    },
-    {
-      id: 3,
-      title: "2 BHK Affordable Flat",
-      location: "Rajkot, Gujarat",
-      price: 4500000,
-      bedrooms: 2,
-      area: 950,
-      image: "https://images.unsplash.com/photo-1599423300746-b62533397364?w=800",
-    },
-  ];
+  const [properties, setProperties] = useState([]);
 
-  const [filtered, setFiltered] = useState(properties);
-
-  const handleSearch = (criteria) => {
-    // Example filtering logic
-    setFiltered(properties);
-  };
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/properties")
+      .then((res) => setProperties(res.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="properties-page">
-      {/* <Navbar /> */}
-      <section className="properties-hero">
-        <h1>Browse Properties</h1>
-        <p>Find your perfect home from thousands of listings.</p>
-        <SearchBar onSearch={handleSearch} />
-      </section>
+      <h2 className="page-title">Available Properties</h2>
 
-      <section className="properties-grid-section">
-        <div className="properties-grid">
-          {filtered.map((property) => (
-            <PropertyCard key={property.id} property={property} />
-          ))}
-        </div>
-      </section>
+      <div className="properties-grid">
+        {properties.length > 0 ? (
+          properties.map((property) => (
+            <PropertyCard key={property._id} property={property} />
+          ))
+        ) : (
+          <p>No properties found</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,15 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./PropertyCard.css";
 
 const PropertyCard = ({ property }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="property-card">
-      <img src={property.image} alt={property.title} className="property-img" />
+    <div
+      className="property-card"
+      onClick={() => navigate(`/property/${property._id}`)}
+    >
+      <img
+        src={property.images?.[0]}
+        alt={property.projectName}
+        className="property-image"
+      />
+
       <div className="property-info">
-        <h3>{property.title}</h3>
+        <h3>{property.projectName}</h3>
         <p>{property.location}</p>
-        <p>₹ {property.price.toLocaleString()}</p>
-        <p>{property.bedrooms} Bedrooms | {property.area} sqft</p>
+
       </div>
     </div>
   );
