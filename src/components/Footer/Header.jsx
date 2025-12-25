@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="footer-col">
+        {/* <div className="footer-col">
           <h3 className="footer-title">Quick Links</h3>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -73,19 +73,19 @@ const Footer = () => {
             <li><Link to="/About">About</Link></li>
             <li><Link to="/Contact">Contact</Link></li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Support */}
-        {/* <div className="footer-col">
-          <h3 className="footer-title">Support</h3>
+        <div className="footer-col">
+          <h3 className="footer-title">Quich Links</h3>
           <ul>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
+            <li><Link to="/terms">Terms & Conditions</Link></li>
+            <li><Link to="/privacy">Policy</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/help">Help Center</Link></li>
-            <li><Link to="/terms">Terms of Service</Link></li>
-            <li><Link to="/privacy">Privacy Policy</Link></li>
           </ul>
-        </div> */}
+        </div>
 
         {/* Newsletter */}
         <div className="footer-col newsletter-col">

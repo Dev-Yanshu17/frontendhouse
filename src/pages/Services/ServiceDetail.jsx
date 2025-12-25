@@ -565,9 +565,9 @@ const ServiceDetail = () => {
             alt={service.title} 
             className="detail-image" 
           />
-          <div className="banner-overlay">
+          {/* <div className="banner-overlay">
             <span className="service-category">{service.category || "Premium Service"}</span>
-          </div>
+          </div> */}
         </div>
         
         {/* <div className="page-title" data-aos="fade-up">

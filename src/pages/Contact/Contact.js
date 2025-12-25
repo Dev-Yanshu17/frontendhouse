@@ -59,7 +59,7 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       <section className="contact-hero">
-        <h1>Contact Us</h1>
+        <h1>Get Into Touch</h1>
         <p>Crafting great spaces starts with a conversation. Let's connect.</p>
       </section>
 

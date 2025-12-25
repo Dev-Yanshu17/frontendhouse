@@ -11,12 +11,16 @@ import Services from "./pages/Services/Services";
 import ServiceDetail from "./pages/Services/ServiceDetail";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/AboutUs/AboutUs";
-import Inquiry from "./pages/Inquiry/Inquiry";
+import Appointment from "./pages/Appointment/Appointment";
+import FAQ from "./pages/FAQ/FAQ";
 
 // ================= COMPONENTS =================
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Footer/Header";
-import ScrollToTop from "./ScrollToTop";
+
+// ================= SCROLL UTILITIES =================
+import ScrollToTop from "./ScrollToTop"; 
+import ScrollUpButton from "./components/ScrollUpButton/ScrollUpButton";
 
 function App() {
   useEffect(() => {
@@ -25,20 +29,29 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Scroll to top on route change */}
       <ScrollToTop />
+
+      {/* Navbar */}
       <Navbar />
 
+      {/* Floating bottom-right scroll button */}
+      <ScrollUpButton />
+
+      {/* App Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/properties" element={<Properties />} />
         <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<ServiceDetail />} />
-        <Route path="/inquiry/:serviceName" element={<Inquiry />} />
+        <Route path="/appointment" element={<Appointment />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
 
+      {/* Footer */}
       <Header />
     </BrowserRouter>
   );

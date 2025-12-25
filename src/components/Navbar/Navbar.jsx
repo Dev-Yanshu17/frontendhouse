@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../images/logo_removed_bg.png";
+import { FaPhoneAlt} from "react-icons/fa";
 
 const Navbar = () => {
   const location = useLocation();
@@ -10,7 +11,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // ================= RESPONSIVE =================
+  /* ================= RESPONSIVE ================= */
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
@@ -18,7 +19,7 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // ================= LOGO CLICK =================
+  /* ================= LOGO CLICK ================= */
   const handleLogoClick = () => {
     setMenuOpen(false);
     if (location.pathname === "/") {
@@ -31,7 +32,6 @@ const Navbar = () => {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/properties", label: "Properties" },
-    { path: "/services", label: "Services" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
   ];
@@ -46,20 +46,44 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* NAV LINKS */}
+      {/* DESKTOP VIEW */}
       {!isMobile ? (
-        <ul className="nav-links">
-          {navItems.map((item) => (
-            <li key={item.path}>
-              <Link
-                to={item.path}
-                className={location.pathname === item.path ? "active" : ""}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          {/* NAV LINKS */}
+          <ul className="nav-links">
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={location.pathname === item.path ? "active" : ""}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* RIGHT SIDE ACTIONS */}
+          <div className="nav-actions">
+            {/* CALL FOR INQUIRY */}
+            <a href="tel:+917859845311" className="call-box">
+              <FaPhoneAlt className="contact-icon" />
+              <div className="call-text">
+                <span className="call-number">+7859845311</span>
+                <span>Call for Inquiry</span>
+              </div>
+            </a>
+
+            {/* APPOINTMENT BUTTON */}
+            <button
+              className="appointment-btn"
+              onClick={() => navigate("/appointment")}
+            >
+              <i className="fas fa-paper-plane"></i>
+              Appointment
+            </button>
+          </div>
+        </>
       ) : (
         <>
           {/* HAMBURGER */}
