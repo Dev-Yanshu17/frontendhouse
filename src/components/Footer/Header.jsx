@@ -56,10 +56,10 @@ const Footer = () => {
               <FaEnvelope className="contact-icon" />
               <span>info@dreamhome.com</span>
             </div>
-            <div className="contact-item">
+            {/* <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
               <span>123 Main St, New York, NY</span>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -81,7 +81,7 @@ const Footer = () => {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
-            <li><Link to="/terms">Terms & Conditions</Link></li>
+            <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
             <li><Link to="/privacy">Policy</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>

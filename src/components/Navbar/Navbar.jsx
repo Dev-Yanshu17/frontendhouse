@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/properties", label: "Properties" },
+    { path: "/projects", label: "projects" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
   ];
@@ -73,15 +73,6 @@ const Navbar = () => {
                 <span>Call for Inquiry</span>
               </div>
             </a>
-
-            {/* APPOINTMENT BUTTON */}
-            <button
-              className="appointment-btn"
-              onClick={() => navigate("/appointment")}
-            >
-              <i className="fas fa-paper-plane"></i>
-              Appointment
-            </button>
           </div>
         </>
       ) : (

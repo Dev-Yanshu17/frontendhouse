@@ -5,22 +5,23 @@ import "aos/dist/aos.css";
 
 // ================= PAGES =================
 import Home from "./pages/Home/Home";
-import Properties from "./pages/Properties/Properties";
-import PropertyDetails from "./pages/Properties/PropertyDetails";
 import Services from "./pages/Services/Services";
 import ServiceDetail from "./pages/Services/ServiceDetail";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/AboutUs/AboutUs";
 import Appointment from "./pages/Appointment/Appointment";
 import FAQ from "./pages/FAQ/FAQ";
+import Project from "./pages/Project/Project";
+import ProjectDetails from "./pages/Project/ProjectDetails"; // <-- Added ProjectDetails
 
 // ================= COMPONENTS =================
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Footer/Header";
-
-// ================= SCROLL UTILITIES =================
-import ScrollToTop from "./ScrollToTop"; 
 import ScrollUpButton from "./components/ScrollUpButton/ScrollUpButton";
+import TermsConditions from "./components/TermsConditions/TermsConditions";
+
+// ================= UTILITIES =================
+import ScrollToTop from "./ScrollToTop"; 
 
 function App() {
   useEffect(() => {
@@ -41,14 +42,15 @@ function App() {
       {/* App Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/properties" element={<Properties />} />
-        <Route path="/property/:id" element={<PropertyDetails />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:id" element={<ServiceDetail />} />
+        <Route path="/projects" element={<Project />} />
+        <Route path="/property/:id" element={<ProjectDetails />} /> {/* <-- Project Details route */}
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
 
       {/* Footer */}

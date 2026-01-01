@@ -83,10 +83,10 @@ const Contact = () => {
               <p>info@dreamdwello.com</p>
             </div>
 
-            <div className="info-row">
+            {/* <div className="info-row">
               <span>📍</span>
               <div>Plot no.2, main street ,NYC, USA – 10044</div>
-            </div>
+            </div> */}
           </div>
 
           <h3 className="hours-title">Opening Hours</h3>
