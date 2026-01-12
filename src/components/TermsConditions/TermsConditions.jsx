@@ -284,13 +284,13 @@ const TermsAndConditions = () => {
                             ))}
 
                             {/* Last Updated */}
-                            <div className="last-updated">
+                            {/* <div className="last-updated">
                                 <p>Last updated: {new Date().toLocaleDateString('en-US', { 
                                     year: 'numeric', 
                                     month: 'long', 
                                     day: 'numeric' 
                                 })}</p>
-                            </div>
+                            </div> */}
 
                             {/* Agreement Section
                             <div className="agreement-box">

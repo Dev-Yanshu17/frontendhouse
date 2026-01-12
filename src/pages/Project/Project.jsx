@@ -113,7 +113,7 @@ const Project = () => {
                   navigate(`/property/${project.id}`)
                 }
               >
-                View Details <FaArrowRight />
+                View Details 
               </button>
             </div>
           </div>

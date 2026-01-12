@@ -88,7 +88,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="">
+        <div className="stayupdated">
           <h3 className="footer-title">Stay Updated</h3>
           <p className="newsletter-text">
             Subscribe to our newsletter for the latest property updates and offers.

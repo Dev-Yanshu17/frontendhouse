@@ -33,6 +33,13 @@
 .footer-brand {
   flex: 1;
   min-width: 300px;
+  margin-left: 50px;
+}
+
+.stayupdated{
+   flex: 1;
+  min-width: 300px;
+  margin-right: 50px;
 }
 
 .logo-container {
@@ -277,9 +284,10 @@
 /* Bottom Bar */
 .footer-bottom {
   margin-top: 05px;
-  padding: 5px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .footer-bottom-content {

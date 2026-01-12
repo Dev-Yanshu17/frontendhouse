@@ -1,17 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AboutUs.css";
-import Navbar from "../../components/Navbar/Navbar";
+import { 
+  FaAward, 
+  FaBuilding, 
+  FaHandshake, 
+  FaUsers, 
+  FaChartLine,
+  FaCalendarAlt,
+  FaCheckCircle,
+  FaLeaf,
+  FaHome,
+  FaShieldAlt
+} from "react-icons/fa";
 
 const AboutUs = () => {
   const navigate = useNavigate();
-
   const [count, setCount] = useState(0);
   const counterRef = useRef(null);
 
-  // ------------------------------
   // Counter Animation (1 → 12)
-  // ------------------------------
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -19,13 +27,12 @@ const AboutUs = () => {
           let start = 0;
           const end = 12;
           const duration = 1000;
-          const stepTime = Math.abs(Math.floor(duration / end));
 
           const counter = setInterval(() => {
             start++;
             setCount(start);
             if (start === end) clearInterval(counter);
-          }, stepTime);
+          }, duration / end);
 
           observer.disconnect();
         }
@@ -33,121 +40,254 @@ const AboutUs = () => {
       { threshold: 0.5 }
     );
 
-    observer.observe(counterRef.current);
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
-  // TIMELINE DATA
-  const timeline = [
-    { year: "2013", event: "Company Founded" },
-    { year: "2017", event: "10 Projects Completed" },
-    { year: "2019", event: "Expanded Commercial Sector" },
-    { year: "2024", event: "Award Winning Developer" },
-    { year: "2025", event: "25+ Successful Projects" },
+  // Core Values
+  const values = [
+    {
+      icon: <FaShieldAlt />,
+      title: "Integrity First",
+      description: "Transparent dealings and ethical practices in every project"
+    },
+    {
+      icon: <FaAward />,
+      title: "Excellence",
+      description: "Uncompromising quality in design, construction, and service"
+    },
+    {
+      icon: <FaHandshake />,
+      title: "Client-Centric",
+      description: "Your vision is our blueprint for success"
+    },
+    {
+      icon: <FaLeaf />,
+      title: "Sustainability",
+      description: "Eco-friendly materials and energy-efficient designs"
+    }
   ];
 
-  // TEAM DATA
-  const team = [
-    {
-      name: "John Builder",
-      role: "Founder & CEO",
-      img: "https://randomuser.me/api/portraits/men/11.jpg",
-    },
-    {
-      name: "Priya Sharma",
-      role: "Lead Architect",
-      img: "https://randomuser.me/api/portraits/women/12.jpg",
-    },
-    {
-      name: "Rahul Mehta",
-      role: "Project Manager",
-      img: "https://randomuser.me/api/portraits/men/14.jpg",
-    },
+  // Milestones
+  const milestones = [
+    { year: "2013", title: "Founded", description: "Started with a vision to redefine luxury living" },
+    { year: "2017", title: "First 100 Homes", description: "Successfully delivered our first 100 premium residences" },
+    { year: "2019", title: "Commercial Expansion", description: "Ventured into commercial real estate development" },
+    { year: "2024", title: "Award-Winning", description: "Recognized as 'Best Luxury Developer'" },
+    { year: "2025", title: "25+ Projects", description: "Over 25 successful projects across Gujarat" }
+  ];
+
+  // Statistics
+  const stats = [
+    { value: "250+", label: "Happy Families" },
+    { value: "95%", label: "Client Satisfaction" },
+    { value: "₹500Cr+", label: "Total Investment" },
+    { value: "50+", label: "Team Members" }
   ];
 
   return (
     <div className="about-page">
-      {/* <Navbar /> */}
-
-      {/* HERO + MISSION */}
-      <section className="mission-section">
-        <div className="mission-image">
-          <img
-            src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29"
-            alt="mission"
-          />
-
-          {/* ========== Animated Counter ========== */}
-          <div className="experience-badge" ref={counterRef}>
-            <h2>{count}+</h2>
-            <p>Years of Experience</p>
+      {/* Hero Section */}
+      <section className="about-hero">
+        <div className="hero-overlay">
+          <div className="container">
+            <h1 className="hero-title">Building Dreams, Creating Legacies</h1>
+            <p className="hero-subtitle">
+              With over a decade of excellence in premium real estate development
+            </p>
           </div>
         </div>
+      </section>
 
-        <div className="mission-text">
-          <p className="section-label"># OUR MISSION</p>
-          <h1>
-            Always provide superior construction services through excellence 
-            in everything we do. Donnelly Construction is committed to adding 
-            value for our clients through innovation, integrity, and performance.
-          </h1>
-
-          <p className="mission-desc">
-            DREAMDWELLO is committed to providing the highest level of construction and 
-            building maintenance services in the East Anglia region. We will ensure the 
-            longevity of our company through repeat and referral business achieved by customer
-            satisfaction by exceeding their expectations on every project we work on.
-          </p>
+      {/* Introduction */}
+      <section className="intro-section">
+        <div className="container">
+          <div className="intro-content">
+            <div className="intro-text">
+              <h2 className="section-title">
+                <span className="title-decor">About</span> DreamDwello
+              </h2>
+              <p className="intro-description">
+                Founded in 2013, DreamDwello has emerged as one of Gujarat's most trusted 
+                luxury real estate developers. We blend innovative design with impeccable 
+                craftsmanship to create spaces that inspire and endure.
+              </p>
+              <p className="intro-description">
+                Our journey began with a simple vision: to transform Gujarat's skyline 
+                with developments that set new benchmarks in luxury, sustainability, 
+                and community living.
+              </p>
+            </div>
+            <div className="experience-counter" ref={counterRef}>
+              <div className="counter-number">{count}</div>
+              <div className="counter-label">Years of Excellence</div>
+              <div className="counter-subtitle">Trusted Since 2013</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* VISION */}
-      <section className="vision-section">
-        <p className="section-label"># OUR VISION</p>
-        <h2>To redefine modern living through innovation and trust.</h2>
-        <p>
-          Our vision is to build sustainable, future-ready communities that
-          balance design, quality, and functionality — ensuring long-term value
-          for residents and investors.
-        </p>
-      </section>
-
-      {/* TIMELINE */}
-      <section className="timeline-section">
-        <h2 className="center">Our Journey</h2>
-
-        <div className="timeline-horizontal">
-          {timeline.map((item, i) => (
-            <div key={i} className="timeline-card">
-              <h3>{item.year}</h3>
-              <p>{item.event}</p>
+      {/* Our Mission & Vision */}
+      <section className="mission-vision-section">
+        <div className="container">
+          <div className="mv-grid">
+            <div className="mv-card mission-card">
+              <div className="mv-icon">
+                <FaBuilding />
+              </div>
+              <h3>Our Mission</h3>
+              <p>
+                To deliver exceptional living experiences through innovative design, 
+                superior construction quality, and unwavering commitment to our 
+                clients' aspirations.
+              </p>
+              <div className="mission-points">
+                <div className="point">
+                  <FaCheckCircle className="point-icon" />
+                  <span>Premium Quality Construction</span>
+                </div>
+                <div className="point">
+                  <FaCheckCircle className="point-icon" />
+                  <span>Timely Project Delivery</span>
+                </div>
+                <div className="point">
+                  <FaCheckCircle className="point-icon" />
+                  <span>Transparent Transactions</span>
+                </div>
+              </div>
             </div>
-          ))}
+
+            <div className="mv-card vision-card">
+              <div className="mv-icon">
+                <FaChartLine />
+              </div>
+              <h3>Our Vision</h3>
+              <p>
+                To be Gujarat's most admired real estate brand, recognized for 
+                creating sustainable communities that enhance quality of life 
+                and deliver lasting value.
+              </p>
+              <div className="vision-goals">
+                <div className="goal">
+                  <div className="goal-number">01</div>
+                  <div className="goal-text">
+                    <h4>Sustainable Development</h4>
+                    <p>Eco-friendly projects with green spaces</p>
+                  </div>
+                </div>
+                <div className="goal">
+                  <div className="goal-number">02</div>
+                  <div className="goal-text">
+                    <h4>Smart Communities</h4>
+                    <p>Integrated technology for modern living</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* TEAM */}
-      {/* <section className="team-section">
-        <h2 className="center">Meet Our Team</h2>
+      {/* Core Values */}
+      <section className="values-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">
+              <span className="title-decor">Our</span> Core Values
+            </h2>
+            <p className="section-subtitle">
+              The principles that guide every decision we make
+            </p>
+          </div>
+          <div className="values-grid">
+            {values.map((value, index) => (
+              <div className="value-card" key={index}>
+                <div className="value-icon-wrapper">
+                  <div className="value-icon">{value.icon}</div>
+                </div>
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <div className="team-cards">
-          {team.map((t, i) => (
-            <div className="team-card" key={i}>
-              <img src={t.img} alt={t.name} />
-              <h3>{t.name}</h3>
-              <p>{t.role}</p>
-            </div>
-          ))}
+      {/* Statistics */}
+      {/* <section className="stats-section">
+        <div className="container">
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div className="stat-item" key={index}>
+                <div className="stat-value">{stat.value}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section> */}
 
-      {/* CTA */}
-      <section className="cta-section">
-        <h2>Have a Project in Mind?</h2>
-        <p>Talk to our experts and start building your dream today.</p>
+{/* Timeline - Horizontal */}
+<section className="timeline-section">
+  <div className="container">
+    <div className="section-header">
+      <h2 className="section-title">
+        <span className="title-decor">Our</span> Journey
+      </h2>
+      <p className="section-subtitle">
+        Key milestones in our growth story
+      </p>
+    </div>
+    
+    <div className="timeline-container">
+      <div className="timeline-line"></div>
+      
+      <div className="timeline-items">
+        {milestones.map((milestone, index) => (
+          <div className="timeline-item" key={index}>
+            <div className="timeline-marker">
+              <div className="marker-circle"></div>
+            </div>
+            <div className="timeline-content">
+              <div className="timeline-year">{milestone.year}</div>
+              <h3 className="timeline-title">{milestone.title}</h3>
+              <p className="timeline-desc">{milestone.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
-        <button onClick={() => navigate("/contact")}>
-          Contact Us →
-        </button>
+      {/* CTA */}
+      <section className="about-cta">
+        <div className="container">
+          <div className="cta-content">
+            <h2>Ready to Build Your Dream?</h2>
+            <p>
+              Partner with Gujarat's most trusted luxury real estate developer. 
+              Let's create something extraordinary together.
+            </p>
+            <div className="cta-buttons">
+              <button 
+                className="btn-primary" 
+                onClick={() => navigate("/projects")}
+              >
+                View Our Projects
+              </button>
+              <button 
+                className="btn-secondary" 
+                onClick={() => navigate("/contact")}
+              >
+                Contact Our Team
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
