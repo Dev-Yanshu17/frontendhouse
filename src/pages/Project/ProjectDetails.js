@@ -519,18 +519,17 @@ const ProjectDetails = () => {
           </div>
         )}
         {/* CTA Section */}
-       <div className="cta-section" data-aos="fade-up">
-  <div className="cta-content">
-    <h3>Interested in this Project?</h3>
-    <p>Contact us today for site visits, pricing details, and special offers</p>
-    <div className="cta-buttons">
-      <button className="cta-btn secondary" onClick={() => navigate("/projects")}>
-        <FaArrowLeft /> Back to Projects
-      </button>
-    </div>
-  </div>
-</div>
- 
+        <div className="cta-section" data-aos="fade-up">
+          <div className="cta-content">
+            <h3>Interested in this Project?</h3>
+            <p>Contact us today for site visits, pricing details, and special offers</p>
+            <div className="cta-buttons">
+              <button className="cta-btn secondary" onClick={() => navigate("/projects")}>
+                <FaArrowLeft /> Back to Projects
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Fullscreen Modal */}
