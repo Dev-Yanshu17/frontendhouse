@@ -893,3 +893,81 @@
   }
 }
 
+.floorplan-section {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+.floorplan-section{
+  color: #000000;
+  margin-bottom:10px;
+}
+
+.floorplan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.floorplan-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: #1a252f;
+  cursor: pointer;
+}
+
+.floorplan-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.floorplan-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+}
+
+.floorplan-card:hover .floorplan-overlay {
+  opacity: 1;
+}
+
+.floorplan-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.floorplan-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.floorplan-modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.floorplan-modal button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}

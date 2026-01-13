@@ -393,6 +393,8 @@ const ProjectDetails = () => {
   const [error, setError] = useState(null);
   const [showGalleryModal, setShowGalleryModal] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+   const [showModal, setShowModal] = useState(false);
+  const [currentImage, setCurrentImage] = useState("");
 
   useEffect(() => {
     fetchProject();
@@ -518,6 +520,47 @@ const ProjectDetails = () => {
             </div>
           </div>
         )}
+
+         {/* FLOOR PLANS */}
+      {project.floorPlans?.length > 0 && (
+        <div className="floorplan-section">
+          <h2>Floor Plans</h2>
+
+          <div className="floorplan-grid">
+            {project.floorPlans.map((plan, i) => (
+              <div
+                key={i}
+                className="floorplan-card"
+                onClick={() => {
+                  setCurrentImage(plan.image);
+                  setShowModal(true);
+                }}
+              >
+                <img src={plan.image} alt={plan.title} />
+                <div className="floorplan-overlay">
+                  <FaExpand />
+                </div>
+                <div className="floorplan-info">
+                  <h4>{plan.title}</h4>
+                  <p>{plan.size}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* MODAL */}
+      {showModal && (
+        <div className="floorplan-modal">
+          <button onClick={() => setShowModal(false)}>
+            <FaTimes />
+          </button>
+          <img src={currentImage} alt="Floor Plan" />
+        </div>
+      )}
+
+
         {/* CTA Section */}
         <div className="cta-section" data-aos="fade-up">
           <div className="cta-content">
