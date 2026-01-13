@@ -170,7 +170,7 @@ const ProjectDetails = () => {
     <p>Contact us today for site visits, pricing details, and special offers</p>
     <div className="cta-buttons">
       <button className="cta-btn secondary" onClick={() => navigate("/projects")}>
-        <FaArrowLeft /> Back to Projects
+         Back to Projects
       </button>
     </div>
   </div>
