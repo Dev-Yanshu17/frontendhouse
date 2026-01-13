@@ -6,28 +6,383 @@ import "aos/dist/aos.css";
 import "./ProjectDetails.css";
 
 /* Icons Import */
-import { 
-  FaMapMarkerAlt, FaHome, FaBuilding, FaCamera, FaDumbbell, FaChild, FaWifi, FaParking, 
-  FaTree, FaSun, FaSnowflake, FaFire, FaWater, FaShower, FaFireExtinguisher, FaFirstAid, 
-  FaTools, FaCar, FaBicycle, FaWalking, FaDog, FaUmbrellaBeach, FaFilm, FaChair, FaVolumeUp, 
-  FaStar, FaArrowLeft, FaTimes, FaChevronLeft, FaChevronRight, FaExpand, FaHotel, FaBook, FaUtensils, FaTrash 
+import {
+  FaMapMarkerAlt,
+  FaHome,
+  FaBuilding,
+  FaCamera,
+  FaSwimmingPool,
+  FaDumbbell,
+  FaChild,
+  FaWifi,
+  FaParking,
+  FaTree,
+  FaSun,
+  FaSnowflake,
+  FaFire,
+  FaWater,
+  FaShower,
+  FaFireExtinguisher,
+  FaFirstAid,
+  FaTools,
+  FaCar,
+  FaBicycle,
+  FaWalking,
+  FaDog,
+  FaUmbrellaBeach,
+  FaFilm,
+  FaChair,
+  FaVolumeUp,
+  FaCheckCircle,
+  FaSpinner,
+  FaStar,
+  FaArrowLeft,
+  FaPhone,
+  FaCalendarAlt,
+  FaUsers,
+  FaRoad,
+  FaBroadcastTower,
+  FaSatelliteDish,
+  FaTableTennis,
+  FaBasketballBall,
+  FaVolleyballBall,
+  FaChess,
+  FaLeaf,
+  FaCoffee,
+  FaHotel,
+  FaMountain,
+  FaBook,
+  FaUtensils,
+  FaRecycle,
+  FaTrash,
+  FaWind,
+  FaThermometer,
+  FaTint,
+  FaBed,
+  FaBath,
+  FaRulerCombined,
+  FaVectorSquare,
+  FaTimes,
+  FaChevronLeft,
+  FaChevronRight,
+  FaExpand
 } from "react-icons/fa";
 
-import { GiRoad, GiStreetLight, GiGate, GiSecurityGate, GiFootprint, GiTennisCourt, GiBinoculars, GiTreehouse, GiCastle, GiCampingTent, GiFireRing, GiFireplace, GiDogHouse, GiWaterDrop, GiWaterTank, GiWateringCan, GiTreeRoots, GiFlowerEmblem, GiTheater, GiFilmProjector, GiPopcorn, GiTicket, GiTabletopPlayers } from "react-icons/gi";
+/* Gi Icons */
+import {
+  GiGate,
+  GiMeditation,
+  GiTennisCourt,
+  GiFootprint,
+  GiTempleGate,
+  GiCampingTent,
+  GiSecurityGate,
+  GiPathDistance,
+  GiBinoculars,
+  GiTreehouse,
+  GiCastle,
+  GiStreetLight,
+  GiRoad,
+  GiHouse,
+  GiModernCity,
+  GiWaterTank,
+  GiWaterDrop,
+  GiWateringCan,
+  GiTreeRoots,
+  GiFlowerEmblem,
+  GiFlowers,
+  GiFountain,
+  GiFireplace,
+  GiFireRing,
+  GiFirstAidKit,
+  GiToolbox,
+  GiTrashCan,
+  GiTowerFlag,
+  GiTabletopPlayers,
+  GiBasketballBall,
+  GiVolleyballBall,
+  GiChessRook,
+  GiCarKey,
+  GiBicycle,
+  GiRunningShoe,
+  GiDogHouse,
+  GiCat,
+  GiBeachBall,
+  GiExitDoor,
+  GiWaterDivinerStick,
+  GiFilmProjector,
+  GiPopcorn,
+  GiTicket,
+  GiTheater
+} from "react-icons/gi";
 
-import { MdSecurity, MdOutlinePool, MdOutlineHouse, MdOutlineWater, MdOutlineElectricBolt, MdOutlineToys, MdOutlineSpa, MdOutlineRestaurant, MdOutlineStorefront, MdOutlinePark, MdOutlineGrass, MdOutlineMedicalServices, MdOutlineDirectionsCar } from "react-icons/md";
+/* Md Icons */
+import {
+  MdSecurity,
+  MdSportsSoccer,
+  MdOutlineRestaurant,
+  MdOutlineStorefront,
+  MdOutlineLandscape,
+  MdOutlineLocalFireDepartment,
+  MdOutlineWater,
+  MdOutlineElectricBolt,
+  MdOutlineToys,
+  MdOutlineSpa,
+  MdOutlinePool,
+  MdOutlineHouse,
+  MdOutlineApartment,
+  MdOutlineVilla,
+  MdOutlinePark,
+  MdOutlineGrass,
+  MdOutlineForest,
+  MdOutlineMedicalServices,
+  MdOutlineConstruction,
+  MdOutlineDelete,
+  MdOutlineSatelliteAlt,
+  MdOutlineSportsTennis,
+  MdOutlineSportsBasketball,
+  MdOutlineSportsVolleyball,
+  MdOutlineSports,
+  MdOutlineDirectionsCar,
+  MdOutlineDirectionsBike,
+  MdOutlineDirectionsWalk,
+  MdOutlinePets,
+  MdOutlineBeachAccess,
+  MdOutlineExitToApp,
+  MdOutlineZoomOutMap
+} from "react-icons/md";
 
-import { IoIosFitness, IoMdFootball, IoMdCar } from "react-icons/io";
+/* Io Icons */
+import {
+  IoIosFitness,
+  IoMdFootball,
+  IoMdCar,
+  IoMdHome,
+  IoMdBusiness,
+  IoMdWater,
+  IoMdSnow,
+  IoMdFlame,
+  IoMdMedkit,
+  IoMdConstruct,
+  IoMdTrash,
+  IoMdRadio,
+  IoMdTennisball,
+  IoMdBasketball,
+  IoMdAmericanFootball,
+  IoMdBicycle,
+  IoMdWalk,
+  IoMdPaw,
+  IoMdUmbrella,
+  IoMdExit
+} from "react-icons/io";
 
 /* Icon Map for Amenities */
 const iconMap = {
-  "Road": <GiRoad />, "Street Light": <GiStreetLight />, "Parking": <FaParking />, "Car Parking": <IoMdCar />,
-  "Bike Parking": <FaBicycle />, "WiFi": <FaWifi />, "Swimming Pool": <MdOutlinePool />, "Gym": <FaDumbbell />,
-  "Children Play Area": <FaChild />, "Yoga Studio": <GiFootprint />, "Club House": <GiTennisCourt />, 
-  "Movie Theater": <GiTheater />, "Cinema Hall": <GiTheater />, "Popcorn & Snacks": <GiPopcorn />, 
-  "Table Tennis": <GiTabletopPlayers />, "Chess": <FaStar />, "Garden": <FaTree />, "Temple": <GiCastle />, 
-  "Resort": <FaHotel />, "Restaurant": <FaUtensils />, "Medical Room": <MdOutlineMedicalServices />, 
-  "Waste Management": <FaTrash />, "DEFAULT": <FaStar />
+  // Infrastructure & Roads
+  "Road": <GiRoad />,
+  "Street Light": <GiStreetLight />,
+  "Internal Roads": <FaRoad />,
+  "Wide Roads": <GiRoad />,
+  "Concrete Road": <GiRoad />,
+  "Tar Road": <GiRoad />,
+  "Asphalt Road": <GiRoad />,
+  "Street Lighting": <GiStreetLight />,
+  "LED Street Lights": <FaSun />,
+  "Parking": <FaParking />,
+  "Covered Parking": <FaParking />,
+  "Car Parking": <IoMdCar />,
+  "Bike Parking": <FaBicycle />,
+  "Visitor Parking": <MdOutlineDirectionsCar />,
+  "Underground Parking": <MdOutlineDirectionsCar />,
+
+  // Drainage & Sewage
+  "Drainage System": <GiWaterDrop />,
+  "Underground Drainage": <GiWaterDrop />,
+  "Sewage System": <GiWaterTank />,
+  "Storm Water Drain": <GiWaterDrop />,
+  "Water Drainage": <GiWaterDrop />,
+
+  // Club & Community
+  "Club House": <GiTennisCourt />,
+  "Community Hall": <MdOutlineHouse />,
+  "Community Center": <MdOutlineHouse />,
+  "Party Hall": <MdOutlineHouse />,
+  "Banquet Hall": <MdOutlineHouse />,
+  "Common Area": <MdOutlineHouse />,
+  "Meeting Room": <MdOutlineHouse />,
+
+  // Movie Theater & Cinema
+  "Movie Theater": <GiTheater />,
+  "Cinema Hall": <GiTheater />,
+  "Movie Screen": <GiFilmProjector />,
+  "Popcorn & Snacks": <GiPopcorn />,
+  "Movie Tickets": <GiTicket />,
+  "Film Show": <FaFilm />,
+  "Comfortable Seating": <FaChair />,
+  "Surround Sound": <FaVolumeUp />,
+
+  // Security
+  "Security": <MdSecurity />,
+  "24×7 Security": <MdSecurity />,
+  "24×7 Security guard With CCTV": <MdSecurity />,
+  "Security Gate": <GiSecurityGate />,
+  "Entry Gate": <GiGate />,
+  "Main Gate": <GiGate />,
+  "Gated Community": <GiGate />,
+  "CCTV": <FaCamera />,
+  "CCTV Surveillance": <FaCamera />,
+  "Security Guard": <MdSecurity />,
+
+  // Children Area
+  "Children Play Area": <MdOutlineToys />,
+  "Childrens Play Area": <MdOutlineToys />,
+  "Children's play area": <FaChild />,
+  "Kids Play Area": <MdOutlineToys />,
+  "Kids Zone": <FaChild />,
+  "Playground": <FaChild/>,
+
+
+  // Internet & Connectivity
+  "WiFi": <FaWifi />,
+  "High Speed Internet": <FaWifi />,
+  "Broadband": <FaBroadcastTower />,
+  "Satellite TV": <FaSatelliteDish />,
+  "DTH Connection": <FaSatelliteDish />,
+
+  // Water & Utilities
+  "Water Supply": <MdOutlineWater />,
+  "24×7 Water Supply": <MdOutlineWater />,
+  "RO Water": <GiWaterDrop />,
+  "Water Tank": <GiWaterTank />,
+  "Overhead Tank": <GiWaterTank />,
+  "Underground Tank": <GiWaterTank />,
+  "Water Purifier": <GiWateringCan />,
+  "Rain Water Harvesting": <GiWateringCan />,
+
+  // Power
+  "Power Backup": <MdOutlineElectricBolt />,
+  "Electricity": <MdOutlineElectricBolt />,
+  "24×7 Power": <MdOutlineElectricBolt />,
+  "Generator": <MdOutlineElectricBolt />,
+  "Inverter": <MdOutlineElectricBolt />,
+  "Solar Power": <FaSun />,
+  "Solar Panel": <FaSun />,
+
+  // Recreation & Sports
+  "Swimming Pool": <MdOutlinePool />,
+  "Pool": <MdOutlinePool />,
+  "Kids Pool": <MdOutlinePool />,
+  "Gym": <FaDumbbell />,
+  "Fitness Center": <IoIosFitness />,
+  "Health Club": <IoIosFitness />,
+  "Yoga Studio": <GiMeditation />,
+  "Yoga Meditation Centre": <MdOutlineSpa />,
+  "Meditation Area": <GiMeditation />,
+  "Spa": <MdOutlineSpa />,
+
+  // Indoor Games
+  "Indoor Games": <MdSportsSoccer />,
+  "Table Tennis": <FaTableTennis />,
+  "Carrom": <GiTabletopPlayers />,
+  "Chess": <FaChess />,
+
+  // Outdoor Games
+  "Outdoor Games": <GiTennisCourt />,
+  "Tennis Court": <GiTennisCourt />,
+  "Basketball Court": <FaBasketballBall />,
+  "Volleyball Court": <FaVolleyballBall />,
+  "Football Ground": <IoMdFootball />,
+  "Cricket Pitch": <IoMdFootball />,
+  "Sports Complex": <MdSportsSoccer />,
+  " ": <GiCastle />,
+
+  // Green Areas & Gardens
+  "Garden": <FaLeaf />,
+  "Landscape Garden": <MdOutlineLandscape />,
+  "Green Belt": <FaTree />,
+  "Park": <GiTreehouse />,
+  "Central Park": <MdOutlinePark />,
+  "Children Park": <GiCastle />,
+  "Walking Park": <MdOutlineGrass />,
+  "Green Area": <GiTreeRoots />,
+  "Flower Garden": <GiFlowerEmblem />,
+
+  // Tracks & Paths
+  "Jogging Track": <GiFootprint />,
+  "Jogging And Cycle Track": <GiPathDistance />,
+  "Walking Track": <GiFootprint />,
+  "Cycle Track": <GiPathDistance />,
+
+  // Library & Education
+  "Library": <FaBook />,
+  "Reading Room": <FaBook />,
+  "Study Room": <FaBook />,
+
+  // Food & Dining
+  "Restaurant": <FaUtensils />,
+  "Restaurant And Mini Store": <MdOutlineRestaurant />,
+  "Cafeteria": <FaCoffee />,
+  "Coffee Shop": <FaCoffee />,
+
+  // Shopping
+  "Mini Store": <MdOutlineStorefront />,
+  "Convenience Store": <MdOutlineStorefront />,
+  "Grocery Store": <MdOutlineStorefront />,
+  "Medical Store": <MdOutlineMedicalServices />,
+
+  // Views & Scenery
+  "Selfie Point": <FaCamera />,
+  "Sunset Point": <FaSun />,
+  "Mountain View": <FaMountain />,
+  "View Point": <GiBinoculars />,
+  "Lake View": <GiWaterDrop />,
+
+  // Camping & Adventure
+  "Night Camping Tent": <GiCampingTent />,
+  "Camping Area": <GiCampingTent />,
+  "Bonfire": <GiFireRing />,
+  "BBQ Area": <GiFireplace />,
+
+  // Spiritual
+  "Temple": <GiTempleGate />,
+  "Prayer Room": <GiTempleGate />,
+
+  // Accommodation
+  "Resort": <FaHotel />,
+  "Hotel": <FaHotel />,
+
+  // Fire & Safety
+  "Fire Safety": <MdOutlineLocalFireDepartment />,
+  "Fire Extinguisher": <FaFireExtinguisher />,
+  "Fire Alarm": <GiFireRing />,
+  "Fire Exit": <GiExitDoor />,
+  "First Aid": <FaFirstAid />,
+  "Medical Room": <MdOutlineMedicalServices />,
+
+  // Maintenance
+  "Maintenance": <FaTools />,
+  "Housekeeping": <IoMdConstruct />,
+
+  // Waste Management
+  "Waste Management": <FaTrash />,
+  "Garbage Collection": <GiTrashCan />,
+  "Segregated Waste": <FaRecycle />,
+
+  // Pet Friendly
+  "Pet Friendly": <FaDog />,
+  "Pet Park": <GiDogHouse />,
+
+  // Beach & Water
+  "Beach Access": <FaUmbrellaBeach />,
+  "Private Beach": <GiBeachBall />,
+
+  // AC & Cooling
+  "Central AC": <FaSnowflake />,
+  "Air Conditioning": <FaSnowflake />,
+  "Heating": <FaFire />,
+
+  // Default
+  "DEFAULT": <FaStar />
 };
 
 const ProjectDetails = () => {
@@ -170,7 +525,7 @@ const ProjectDetails = () => {
     <p>Contact us today for site visits, pricing details, and special offers</p>
     <div className="cta-buttons">
       <button className="cta-btn secondary" onClick={() => navigate("/projects")}>
-         Back to Projects
+        <FaArrowLeft /> Back to Projects
       </button>
     </div>
   </div>
