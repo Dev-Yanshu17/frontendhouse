@@ -34,7 +34,7 @@
   position: relative;
   width: 99%;
   margin: 20px;
-  height: 85vh;
+  height: 70vh;
   min-height: 420px;
   max-height: 900px;
   overflow: hidden;
@@ -53,7 +53,7 @@
 }
 
 .home-page .hero-slide.active {
-  opacity: 1;
+  opacity: 3;
   transform: scale(1);
 }
 
@@ -123,13 +123,13 @@
 
 /* ================= PROPERTY SECTION ================= */
 .home-page .property-section {
-  padding: 80px 0;
+  padding: px 0;
   background: white;
 }
 
 .home-page .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .home-page .section-header h2 {
@@ -304,19 +304,20 @@
 
 /* ================= CTA ================= */
 .home-page .cta-section {
-  padding: 100px 0;
+  padding: 50px 0;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   text-align: center;
   color: white;
-}
-
-.home-page .cta-section h2 {
-  font-size: 3rem;
   margin-bottom: 15px;
 }
 
+.home-page .cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
 .home-page .cta-section p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   opacity: 0.9;
   margin-bottom: 30px;
 }
@@ -339,8 +340,7 @@
 }
 
 .home-page .cta-section button:hover {
-  background: var(--secondary-light);
-  transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 /* ================= LOADING & ERROR ================= */
