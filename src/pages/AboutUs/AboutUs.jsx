@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./AboutUs.css";
 import { 
   FaAward, 
@@ -18,6 +19,58 @@ const AboutUs = () => {
   const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const counterRef = useRef(null);
+
+    /* ================= TESTIMONIAL STATE ================= */
+  const [feedback, setFeedback] = useState({
+    subject: "",
+    name: "",
+    designation: "",
+    location: "",
+    message: ""
+  });
+
+  const [testimonials, setTestimonials] = useState([]);
+
+  /* ================= HANDLE INPUT ================= */
+  const handleChange = (e) => {
+    setFeedback({ ...feedback, [e.target.name]: e.target.value });
+  };
+
+  /* ================= SUBMIT TESTIMONIAL ================= */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/api/testimonials/add", feedback);
+      alert("Thank you for your feedback!");
+
+      setFeedback({
+        subject: "",
+        name: "",
+        designation: "",
+        location: "",
+        message: ""
+      });
+
+      fetchTestimonials();
+    } catch (error) {
+      alert("Something went wrong!");
+    }
+  };
+
+  /* ================= FETCH TESTIMONIALS ================= */
+  const fetchTestimonials = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/api/testimonials");
+      setTestimonials(res.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
+
 
   // Counter Animation (1 → 12)
   useEffect(() => {
@@ -262,6 +315,88 @@ const AboutUs = () => {
     </div>
   </div>
 </section>
+
+{/* ================= TESTIMONIALS ================= */}
+<section className="testimonial-section">
+  <div className="container">
+    <div className="section-header">
+      <h2 className="section-title">
+        <span className="title-decor">Client</span> Testimonials
+      </h2>
+      <p className="section-subtitle">
+        What our clients say about DreamDwello
+      </p>
+    </div>
+
+    {/* ===== DISPLAY TESTIMONIALS ===== */}
+    {/* <div className="values-grid">
+      {testimonials.map((item) => (
+        <div className="value-card" key={item._id}>
+          <h3>{item.subject}</h3>
+          <p>"{item.message}"</p>
+          <strong>{item.name}</strong>
+          <div style={{ fontSize: "0.9rem", color: "#718096" }}>
+            {item.designation} • {item.location}
+          </div>
+        </div>
+      ))}
+    </div> */}
+
+    {/* ===== ADD TESTIMONIAL FORM ===== */}
+    <form className="testimonial-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        value={feedback.subject}
+        onChange={handleChange}
+        required
+      />
+
+      <div className="form-row">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={feedback.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="designation"
+          placeholder="Designation"
+          value={feedback.designation}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <input
+        type="text"
+        name="location"
+        placeholder="Location"
+        value={feedback.location}
+        onChange={handleChange}
+        required
+      />
+
+      <textarea
+        name="message"
+        placeholder="Your Feedback"
+        rows="5"
+        value={feedback.message}
+        onChange={handleChange}
+        required
+      />
+
+      <button type="submit" className="btn-primary">
+        Submit Feedback
+      </button>
+    </form>
+  </div>
+</section>
+
 
       {/* CTA */}
       <section className="about-cta">

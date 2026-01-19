@@ -269,7 +269,7 @@
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 10px;
 }
 
 .value-card {
@@ -756,3 +756,55 @@
     padding: 20px;
   }
 }
+
+/* ================= TESTIMONIALS ================= */
+.testimonial-section {
+  padding: 10px 0;
+  background: #ffffff;
+}
+
+.testimonial-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #203142;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(10, 61, 98, 0.1);
+}
+
+.testimonial-form input,
+.testimonial-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 1rem;
+  outline: none;
+}
+
+.testimonial-form input:focus,
+.testimonial-form textarea:focus {
+  border-color: #0a3d62;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.testimonial-form textarea {
+  resize: none;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-form {
+    padding: 30px;
+  }
+}
+

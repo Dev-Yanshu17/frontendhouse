@@ -21,6 +21,11 @@ const Home = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+const [testimonials, setTestimonials] = useState([]);
+const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+
+
 
   const navigate = useNavigate();
 
@@ -95,6 +100,35 @@ const Home = () => {
     const timer = setInterval(handleNextSlide, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+  fetchTestimonials();
+  }, []);
+
+  const fetchTestimonials = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/api/testimonials");
+      setTestimonials(res.data.data);
+    } catch (error) {
+      console.error("Failed to load testimonials");
+    }
+  };
+
+  
+const handleNextTestimonial = () => {
+  if (testimonialIndex < testimonials.length - 3) {
+    setTestimonialIndex(prev => prev + 1);
+  }
+};
+
+const handlePrevTestimonial = () => {
+  if (testimonialIndex > 0) {
+    setTestimonialIndex(prev => prev - 1);
+  }
+};
+
+
+
 
   return (
     <div className="home-page">
@@ -195,55 +229,68 @@ const Home = () => {
       </section> */}
 
 {/* ================= TESTIMONIALS ================= */}
-      <section className="testimonials-section">
-        <div className="container">
-          <div className="section-header">
-            <h2>What Our Clients Say</h2>
-            <p className="section-subtitle">Hear from our satisfied customers</p>
-          </div>
-          
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"DreamDwello helped me find my perfect home in just 2 weeks. Their service was exceptional and transparent throughout the process!"</p>
-              </div>
+<section className="testimonials-section">
+  <div className="container">
+    <div className="section-header">
+      <h2>What Our Clients Say</h2>
+      <p className="section-subtitle">Real feedback from happy customers</p>
+    </div>
+
+    <div className="testimonial-viewport">
+
+      <button
+        className="testimonial-nav left"
+        onClick={handlePrevTestimonial}
+        disabled={testimonialIndex === 0}
+      >
+        ‹
+      </button>
+
+      <div className="testimonial-track-wrapper">
+        <div
+          className="testimonial-track"
+          style={{
+            transform: `translateX(-${testimonialIndex * 360}px)`
+          }}
+        >
+          {testimonials.map((item) => (
+            <div className="testimonial-card" key={item._id}>
+              <p className="testimonial-text">
+                “{item.message}”
+              </p>
+
               <div className="testimonial-author">
-                <div className="author-avatar">RP</div>
+                <div className="author-avatar">
+                  {item.name
+                    .split(" ")
+                    .map(w => w[0])
+                    .join("")}
+                </div>
+
                 <div className="author-info">
-                  <h4>Raj Patel</h4>
-                  <p>Business Owner, Ahmedabad</p>
+                  <h4>{item.name}</h4>
+                  <p>{item.designation}, {item.location}</p>
                 </div>
               </div>
             </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"The team at DreamDwello made the entire home buying process smooth and hassle-free. Highly recommended for their professionalism!"</p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-avatar">PS</div>
-                <div className="author-info">
-                  <h4>Priya Sharma</h4>
-                  <p>Software Engineer, Surat</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"From search to settlement, DreamDwello provided excellent support. Their verified listings gave me confidence in my investment."</p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-avatar">AV</div>
-                <div className="author-info">
-                  <h4>Amit Verma</h4>
-                  <p>Doctor, Vadodara</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      <button
+        className="testimonial-nav right"
+        onClick={handleNextTestimonial}
+        disabled={testimonialIndex >= testimonials.length - 3}
+      >
+        ›
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+
 
 
       {/* ================= CTA SECTION ================= */}
