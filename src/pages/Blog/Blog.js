@@ -6,9 +6,8 @@ const blogs = [
     id: 1,
     title: "Top 5 Real Estate Investment Tips",
     image: "https://assets-news.housing.com/news/wp-content/uploads/2021/11/25203239/Indian-property-market-shutterstock_1700575657-1200x700-compressed.jpg",
-    excerpt:
-      "Learn how to maximize your returns and choose the best properties for investment.",
-    link: "https://assets-news.housing.com/news/wp-content/uploads/2021/11/25203239/Indian-property-market-shutterstock_1700575657-1200x700-compressed.jpg",
+    excerpt: "Learn how to maximize your returns and choose the best properties for investment.",
+    link: "https://www.investopedia.com/investing/simple-ways-invest-real-estate/"
   },
   {
     id: 2,
@@ -16,7 +15,7 @@ const blogs = [
     image: "https://lambiehomes.com/wp-content/uploads/2025/01/ADP_8771-1024x682.jpg",
     excerpt:
       "Discover the latest design trends that make homes functional, stylish, and sustainable.",
-    link: "#",
+    link: "https://www.homedit.com/category/architecture/",
   },
   {
     id: 3,
@@ -24,7 +23,7 @@ const blogs = [
     image: "https://images.agentloft.com/rr-images/uploads/rr-blogs-migrated/Sell-Buy-Same-Time.png",
     excerpt:
       "A step-by-step guide to attract buyers and sell your property quickly.",
-    link: "#",
+    link: "https://www.ghar.tv/blog/complete-guide-to-selling-your-property-fast-in-india-expert-tips-strategies/artid3471",
   },
 ];
 
@@ -46,9 +45,9 @@ const Blog = () => {
               <div className="blog-content">
                 <h3 className="blog-title">{blog.title}</h3>
                 <p className="blog-excerpt">{blog.excerpt}</p>
-                {/* <a href={blog.link} className="blog-btn">
+                <a href={blog.link} className="blog-btn">
                   Read More
-                </a> */}
+                </a>
               </div>
             </div>
           ))}
