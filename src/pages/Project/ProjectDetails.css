@@ -171,73 +171,96 @@
   font-weight: 700;
 }
 
-/* Gallery Section */
+/* ================= GALLERY SECTION ================= */
 .gallery-section {
-  background-color: white;
+  background-color: #ffffff;
   padding: 40px;
   border-radius: 12px;
   margin-bottom: 40px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* GRID – AUTO-CENTER CARDS */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* ✅ Dynamic columns */
+  gap: 24px;
+  justify-content: center; /* ✅ Centers single/few cards */
 }
 
+/* CARD */
 .gallery-item {
   position: relative;
-  height: 250px;
-  border-radius: 10px;
+  width: 260px;
+  height: 200px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f4f4f4;
 }
 
+/* Hover */
 .gallery-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
+/* IMAGE */
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
+/* OVERLAY */
 .image-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .gallery-item:hover .image-overlay {
   opacity: 1;
 }
 
+/* ICON */
 .expand-icon {
-  color: white;
-  font-size: 36px;
-  background-color: rgba(52, 152, 219, 0.8);
-  padding: 15px;
+  color: #fff;
+  font-size: 32px;
+  background: rgba(52, 152, 219, 0.9);
+  padding: 14px;
   border-radius: 50%;
 }
 
-/* Amenities Section */
+/* ================= RESPONSIVE ================= */
+
+/* Tablet – 2 per row */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+/* Mobile – 1 centered */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*-------------- Amenities Section ---------------*/
 .amenities-section {
   background-color: white;
   padding: 40px;

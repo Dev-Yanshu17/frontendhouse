@@ -308,7 +308,7 @@
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   text-align: center;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 .home-page .cta-section h2 {
@@ -428,55 +428,143 @@
   }
 }
 
-/* ================= TESTIMONIALS ================= */
+/* ================= TESTIMONIALS SECTION ================= */
 
 .home-page .testimonials-section {
   padding: 100px 0;
-  background: #fff;
+  background: #ffffff;
 }
 
-/* OUTER WRAPPER */
+/* HEADER */
+.home-page .testimonials-section .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.home-page .testimonials-section .section-header h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0d47a1, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-page .section-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-top: 0px;
+}
+
+/* ================= VIEWPORT ================= */
+
 .home-page .testimonial-viewport {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-/* CLIPPING AREA — THIS FIXES 4TH CARD ISSUE */
+/* ================= CLIPPING WRAPPER ================= */
+
 .home-page .testimonial-track-wrapper {
+  width: 100%;
+  max-width: 1120px; /* EXACTLY 3 cards */
   overflow: hidden;
-  width: 1120px; /* 3 cards x 320 + 2 gaps (80px) */
   margin: 0 auto;
 }
 
-/* SLIDER */
+/* ================= SLIDER TRACK ================= */
+
 .home-page .testimonial-track {
   display: flex;
   gap: 40px;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s ease-in-out;
 }
 
-/* CARD */
+/* ================= TESTIMONIALS SECTION ================= */
+
+.home-page .testimonials-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+/* HEADER */
+.home-page .testimonials-section .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.home-page .testimonials-section h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0d47a1, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-page .section-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-top: 10px;
+}
+
+/* ================= VIEWPORT ================= */
+
+.home-page .testimonial-viewport {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= CLIPPING WRAPPER (FIXED) ================= */
+
+.home-page .testimonial-track-wrapper {
+  width: 100%;
+  max-width: 1040px; /* ✅ EXACT: (320*3 + 40*2) */
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* ================= SLIDER TRACK ================= */
+
+.home-page .testimonial-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* ================= CARD ================= */
+
 .home-page .testimonial-card {
   width: 320px;
   height: 220px;
+  flex-shrink: 0;
   background: #0a4f95;
-  color: #fff;
+  color: #ffffff;
   padding: 28px;
   border-radius: 16px;
-  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
+
+.home-page .testimonial-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ================= TEXT ================= */
 
 .home-page .testimonial-text {
   font-style: italic;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-/* AUTHOR */
+/* ================= AUTHOR ================= */
+
 .home-page .testimonial-author {
   display: flex;
   align-items: center;
@@ -487,7 +575,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #00c9b7, #ff6b35);
+  background: linear-gradient(135deg, #03978b, #c8400e);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -498,6 +586,7 @@
 .home-page .author-info h4 {
   margin: 0;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .home-page .author-info p {
@@ -506,46 +595,70 @@
   opacity: 0.85;
 }
 
-/* ARROWS */
+/* ================= TESTIMONIAL ARROWS – FINAL FIX ================= */
+
 .home-page .testimonial-nav {
+  width: 56px;
+  height: 56px;
   background: #ff6b35;
   border: none;
-  color: white;
-  width: 44px;
-  height: 44px;
   border-radius: 50%;
-  font-size: 1.5rem;
+  color: #ffffff;
   cursor: pointer;
-  transition: 0.3s;
+
+  /* ✅ REAL CENTERING */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ✅ LARGE ARROW */
+  font-size: 42px;
+  font-weight: 700;
+
+  /* 🔥 MOST IMPORTANT */
+  line-height: 1;
+  padding: 0;
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* 🔥 OPTICAL FIX FOR TEXT ARROWS */
+.home-page .testimonial-nav span,
+.home-page .testimonial-nav {
+  transform: translateY(1px);
+}
+
+/* Hover */
 .home-page .testimonial-nav:hover {
-  background: #ff9e5c;
+  background: #893e01;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
+/* Disabled */
 .home-page .testimonial-nav:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
+/* Positioning */
 .home-page .testimonial-nav.left {
-  margin-right: 20px;
+  margin-right: 24px;
 }
 
 .home-page .testimonial-nav.right {
-  margin-left: 20px;
+  margin-left: 24px;
 }
+/* ================= RESPONSIVE ================= */
 
-/* RESPONSIVE */
 @media (max-width: 1200px) {
   .home-page .testimonial-track-wrapper {
-    width: 720px; /* 2 cards */
+    max-width: 680px; /* 2 cards → (320*2 + 40) */
   }
 }
 
 @media (max-width: 768px) {
   .home-page .testimonial-track-wrapper {
-    width: 320px; /* 1 card */
+    max-width: 320px; /* 1 card */
   }
 
   .home-page .testimonial-nav {
