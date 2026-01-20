@@ -12,6 +12,7 @@ import About from "./pages/AboutUs/AboutUs";
 import Appointment from "./pages/Appointment/Appointment";
 import FAQ from "./pages/FAQ/FAQ";
 import Project from "./pages/Project/Project";
+import Blog from "./pages/Blog/Blog";
 import ProjectDetails from "./pages/Project/ProjectDetails"; // <-- Added ProjectDetails
 
 // ================= COMPONENTS =================
@@ -51,6 +52,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
 
       {/* Footer */}

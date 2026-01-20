@@ -495,7 +495,7 @@ const ProjectDetails = () => {
         {/* Gallery */}
         {project.images && project.images.length > 1 && (
           <div className="gallery-section">
-            {/* <h2><FaCamera /> Gallery</h2> */}
+            <h2> Gallery</h2>
             <div className="gallery-grid">
               {project.images.slice(1, Math.min(5, project.images.length)).map((img, index) => (
                 <div className="gallery-item" key={index} onClick={() => openGalleryModal(index + 1)}>
