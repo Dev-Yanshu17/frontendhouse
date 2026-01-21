@@ -559,7 +559,38 @@ const ProjectDetails = () => {
           <img src={currentImage} alt="Floor Plan" />
         </div>
       )}
+{/* ================= MAP CARD ================= */}
+{project.latitude && project.longitude && (
+  <div className="map-section" data-aos="fade-up">
+    <h2>Project Location</h2>
 
+    <div className="map-card">
+      {/* MAP EMBED (DESTINATION ONLY) */}
+      <iframe
+        title="Project Location Map"
+        src={`https://www.google.com/maps?q=${project.latitude},${project.longitude}&z=15&output=embed`}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      {/* MAP ACTION */}
+      <div className="map-actions">
+        <button
+          className="map-btn"
+          onClick={() =>
+            window.open(
+              `https://www.google.com/maps/dir/?api=1&origin=current+location&destination=${project.latitude},${project.longitude}&travelmode=driving`,
+              "_blank"
+            )
+          }
+        >
+          📍 Get Directions
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
         {/* CTA Section */}
         <div className="cta-section" data-aos="fade-up">
