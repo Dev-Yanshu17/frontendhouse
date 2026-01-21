@@ -183,65 +183,64 @@ const AboutUs = () => {
         </div>
       {/* </section> */}
 
-      {/* Our Mission & Vision */}
-      {/* <section className="mission-vision-section"> */}
-        <div className="container">
-          <div className="mv-grid">
-            <div className="mv-card mission-card">
-              <div className="mv-icon">
-                <FaBuilding />
-              </div>
-              <h3>Our Mission</h3>
-              <p>
-                To deliver exceptional living experiences through innovative design, 
-                superior construction quality, and unwavering commitment to our 
-                clients' aspirations.
-              </p>
-              <div className="mission-points">
-                <div className="point">
-                  <FaCheckCircle className="point-icon" />
-                  <span>Premium Quality Construction</span>
-                </div>
-                <div className="point">
-                  <FaCheckCircle className="point-icon" />
-                  <span>Timely Project Delivery</span>
-                </div>
-                <div className="point">
-                  <FaCheckCircle className="point-icon" />
-                  <span>Transparent Transactions</span>
-                </div>
-              </div>
-            </div>
 
-            <div className="mv-card vision-card">
-              <div className="mv-icon">
-                <FaChartLine />
-              </div>
-              <h3>Our Vision</h3>
-              <p>
-                To be Gujarat's most admired real estate brand, recognized for 
-                creating sustainable communities that enhance quality of life 
-                and deliver lasting value.
-              </p>
-              <div className="vision-goals">
-                <div className="goal">
-                  <div className="goal-number">01</div>
-                  <div className="goal-text">
-                    <h4>Sustainable Development</h4>
-                    <p>Eco-friendly projects with green spaces</p>
-                  </div>
-                </div>
-                <div className="goal">
-                  <div className="goal-number">02</div>
-                  <div className="goal-text">
-                    <h4>Smart Communities</h4>
-                    <p>Integrated technology for modern living</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+{/* ----------mission & vision---------- */}
+
+  <div className="container">
+    <div className="mv-header">
+      <h2>
+        Our <span>Mission & Vision</span>
+      </h2>
+      <p>
+        Guiding principles that define who we are and where we are headed
+      </p>
+    </div>
+
+    <div className="mv-cards">
+
+      {/* Mission */}
+      <div className="mv-box mission">
+        <div className="mv-icon">
+          <FaBuilding />
         </div>
+        <h3>Our Mission</h3>
+        <p>
+          Our mission is to simplify real estate through transparency, trust,
+          and quality construction. We focus on delivering thoughtfully designed
+          spaces that provide long-term value and a seamless experience for our clients.
+        </p>
+
+        <ul>
+          <li>Transparent & customer-first approach</li>
+          <li>Premium construction standards</li>
+          <li>Timely and reliable project delivery</li>
+        </ul>
+      </div>
+
+      {/* Vision */}
+      <div className="mv-box vision">
+        <div className="mv-icon">
+          <FaChartLine />
+        </div>
+        <h3>Our Vision</h3>
+        <p>
+          Our vision is to become a trusted and forward-thinking real estate brand,
+          shaping modern lifestyles and building sustainable communities for the future.
+        </p>
+
+        <ul>
+          <li>Sustainable & eco-friendly developments</li>
+          <li>Smart, future-ready living spaces</li>
+          <li>Long-term value for communities</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
       {/* </section> */}
 
       {/* Core Values */}

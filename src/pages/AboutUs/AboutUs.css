@@ -142,112 +142,127 @@
 }
 
 /* ================= MISSION & VISION ================= */
-.mission-vision-section {
-  padding: 100px 0;
-  background: #ffffff;
+/* ================= MISSION & VISION ================= */
+.mv-section {
+  padding: 90px 0;
+  background: #f8fafc;
 }
 
-.mv-grid {
+.mv-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.mv-header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 15px;
+}
+
+.mv-header h2 span {
+  color: #0a3d62;
+}
+
+.mv-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Cards */
+.mv-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 
-.mv-card {
-  padding: 50px 40px;
+.mv-box {
+  background: #ffffff;
   border-radius: 20px;
-  position: relative;
-  overflow: hidden;
+  padding: 50px 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.mission-card {
-  background: linear-gradient(145deg, #f0f7ff, #e1eeff);
-  border: 1px solid #e2e8f0;
+.mv-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
-.vision-card {
-  background: linear-gradient(145deg, #fff7f0, #ffe9e1);
-  border: 1px solid #fed7d7;
-}
-
+/* Icon */
 .mv-icon {
-  font-size: 3rem;
-  color: #0a3d62;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #0a3d62, #3c6382);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.8rem;
   margin-bottom: 25px;
 }
 
-.vision-card .mv-icon {
-  color: #c05621;
-}
-
-.mv-card h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #1a202c;
-}
-
-.mv-card p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #4a5568;
-  margin-bottom: 30px;
-}
-
-.mission-points {
-  margin-top: 30px;
-}
-
-.point {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.point-icon {
-  color: #38a169;
-  margin-right: 15px;
-  font-size: 1.2rem;
-}
-
-.point span {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #2d3748;
-}
-
-.vision-goals {
-  margin-top: 30px;
-}
-
-.goal {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 12px;
-}
-
-.goal-number {
+/* Text */
+.mv-box h3 {
   font-size: 1.8rem;
-  font-weight: 800;
-  color: #c05621;
-  margin-right: 15px;
-  min-width: 40px;
-}
-
-.goal-text h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 5px;
+  font-weight: 700;
+  margin-bottom: 15px;
   color: #1a202c;
 }
 
-.goal-text p {
-  font-size: 0.95rem;
-  color: #718096;
+.mv-box p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+/* List */
+.mv-box ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
+}
+
+.mv-box ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.mv-box ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #16a34a;
+  font-weight: bold;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .mv-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-box {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mv-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .mv-box h3 {
+    font-size: 1.6rem;
+  }
 }
 
 /* ================= CORE VALUES ================= */
@@ -932,16 +947,4 @@
     font-size: 0.95rem;
     padding: 12px 14px;
   }
-}
-
-
-
-
-/* REMOVE BLUE LINE BELOW SECTION TITLES */
-.section-title::after,
-.section-header::after,
-.section-header h2::after,
-.title-decor::after {
-  content: none !important;
-  display: none !important;
 }
