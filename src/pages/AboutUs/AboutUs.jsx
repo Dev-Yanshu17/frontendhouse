@@ -156,7 +156,7 @@ const AboutUs = () => {
       </section>
 
       {/* Introduction */}
-      <section className="intro-section">
+      {/* <section className="intro-section"> */}
         <div className="container">
           <div className="intro-content">
             <div className="intro-text">
@@ -181,10 +181,10 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </section>
+      {/* </section> */}
 
       {/* Our Mission & Vision */}
-      <section className="mission-vision-section">
+      {/* <section className="mission-vision-section"> */}
         <div className="container">
           <div className="mv-grid">
             <div className="mv-card mission-card">
@@ -242,18 +242,18 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </section>
+      {/* </section> */}
 
       {/* Core Values */}
-      <section className="values-section">
+      {/* <section className="values-section"> */}
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">
               <span className="title-decor">Our</span> Core Values
             </h2>
-            <p className="section-subtitle">
+            {/* <p className="section-subtitle">
               The principles that guide every decision we make
-            </p>
+            </p> */}
           </div>
           <div className="values-grid">
             {values.map((value, index) => (
@@ -267,7 +267,7 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </section>
+      {/* </section> */}
 
       {/* Statistics */}
       {/* <section className="stats-section">
@@ -284,15 +284,15 @@ const AboutUs = () => {
       </section> */}
 
 {/* Timeline - Horizontal */}
-<section className="timeline-section">
+{/* <section className="timeline-section"> */}
   <div className="container">
     <div className="section-header">
       <h2 className="section-title">
         <span className="title-decor">Our</span> Journey
       </h2>
-      <p className="section-subtitle">
+      {/* <p className="section-subtitle">
         Key milestones in our growth story
-      </p>
+      </p> */}
     </div>
     
     <div className="timeline-container">
@@ -314,18 +314,18 @@ const AboutUs = () => {
       </div>
     </div>
   </div>
-</section>
+{/* </section> */}
 
 {/* ================= TESTIMONIALS ================= */}
-<section className="testimonial-section">
+{/* <section className="testimonial-section"> */}
   <div className="container">
     <div className="section-header">
       <h2 className="section-title">
-        <span className="title-decor">Client</span> Testimonials
+        <span className="title-decor">Clients</span> Testimonials
       </h2>
-      <p className="section-subtitle">
+      {/* <p className="section-subtitle">
         What our clients say about DreamDwello
-      </p>
+      </p> */}
     </div>
 
     {/* ===== DISPLAY TESTIMONIALS ===== */}
@@ -395,7 +395,7 @@ const AboutUs = () => {
       </button>
     </form>
   </div>
-</section>
+{/* </section> */}
 
 
       {/* CTA */}
