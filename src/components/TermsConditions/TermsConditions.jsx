@@ -14,15 +14,15 @@ const TermsAndConditions = () => {
             id: 'introduction',
             title: '1. Introduction',
             content: `
-                Welcome to PropertyPro, a comprehensive real estate property management system. 
+                Welcome to DreamDWello, a comprehensive real estate property management system. 
                 These Terms and Conditions govern your use of our platform, services, and applications. 
-                By accessing or using PropertyPro, you agree to be bound by these Terms.
+                By accessing or using DreamDWello, you agree to be bound by these Terms.
                 
-                PropertyPro provides a digital platform for property owners, managers, tenants, 
+                DreamDWello provides a digital platform for property owners, managers, tenants, 
                 and real estate professionals to manage properties, leases, payments, maintenance requests, 
                 and other property-related activities.
             `,
-            important: "These Terms constitute a legally binding agreement between you and PropertyPro Management Inc. Please read them carefully before using our services."
+            important: "These Terms constitute a legally binding agreement between you and DreamDWello Management Inc. Please read them carefully before using our services."
         },
         {
             id: 'definitions',
@@ -31,7 +31,7 @@ const TermsAndConditions = () => {
                 In these Terms, the following definitions apply:
             `,
             list: [
-                '"Platform" refers to the PropertyPro website, mobile applications, and related services.',
+                '"Platform" refers to the DreamDWello website, mobile applications, and related services.',
                 '"User" means any individual or entity who accesses or uses the Platform.',
                 '"Property Owner" refers to users who list and manage properties on the Platform.',
                 '"Tenant" refers to users who rent or lease properties through the Platform.',
@@ -44,7 +44,7 @@ const TermsAndConditions = () => {
             id: 'user-accounts',
             title: '3. User Accounts and Registration',
             content: `
-                To access certain features of PropertyPro, you must register for an account. You agree to:
+                To access certain features of DreamDWello, you must register for an account. You agree to:
             `,
             numberedList: [
                 'Provide accurate, current, and complete information during registration',
@@ -53,7 +53,7 @@ const TermsAndConditions = () => {
                 'Notify us immediately of any unauthorized use of your account',
                 'Be responsible for all activities that occur under your account'
             ],
-            additional: 'PropertyPro reserves the right to suspend or terminate accounts that provide false information or violate these Terms.'
+            additional: 'DreamDWello reserves the right to suspend or terminate accounts that provide false information or violate these Terms.'
         },
         {
             id: 'property-listings',
@@ -70,14 +70,14 @@ const TermsAndConditions = () => {
                 },
                 {
                     title: '4.3 Tenant Screening',
-                    content: 'PropertyPro may provide tenant screening services, but ultimate responsibility for tenant selection remains with the Property Owner/Manager.'
+                    content: 'DreamDWello may provide tenant screening services, but ultimate responsibility for tenant selection remains with the Property Owner/Manager.'
                 }
             ]
         },
         {
             id: 'payments',
             title: '5. Payments and Fees',
-            content: 'PropertyPro may charge fees for certain services. By using these services, you agree to pay all applicable fees.',
+            content: 'DreamDWello may charge fees for certain services. By using these services, you agree to pay all applicable fees.',
             subsections: [
                 {
                     title: '5.1 Subscription Fees',
@@ -89,16 +89,16 @@ const TermsAndConditions = () => {
                 },
                 {
                     title: '5.3 Payment Processing',
-                    content: 'All payments are processed through secure third-party payment processors. PropertyPro does not store credit card information.'
+                    content: 'All payments are processed through secure third-party payment processors. DreamDWello does not store credit card information.'
                 }
             ]
         },
         {
             id: 'liability',
             title: '6. Liability and Disclaimers',
-            disclaimer: 'PropertyPro is a platform that facilitates property management activities. We do not own, sell, or lease properties listed on our platform.',
+            disclaimer: 'DreamDWello is a platform that facilitates property management activities. We do not own, sell, or lease properties listed on our platform.',
             content: `
-                PropertyPro provides the Platform "as is" and "as available" without warranties of any kind. 
+                DreamDWello provides the Platform "as is" and "as available" without warranties of any kind. 
                 We do not guarantee that:
             `,
             list: [
@@ -106,7 +106,7 @@ const TermsAndConditions = () => {
                 'Listings are accurate or properties are as described',
                 'Tenants or Property Owners will fulfill their obligations'
             ],
-            additional: 'To the maximum extent permitted by law, PropertyPro shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Platform.'
+            additional: 'To the maximum extent permitted by law, DreamDWello shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Platform.'
         },
         {
             id: 'termination',
@@ -115,15 +115,15 @@ const TermsAndConditions = () => {
             numberedList: [
                 'Your right to use the Platform immediately ceases',
                 'You must pay any outstanding fees',
-                'PropertyPro may retain your data as required by law or for legitimate business purposes'
+                'DreamDWello may retain your data as required by law or for legitimate business purposes'
             ],
-            additional: 'PropertyPro may suspend or terminate your access to the Platform immediately if you violate these Terms.'
+            additional: 'DreamDWello may suspend or terminate your access to the Platform immediately if you violate these Terms.'
         },
         {
             id: 'changes',
             title: '8. Changes to Terms',
             content: `
-                PropertyPro reserves the right to modify these Terms at any time. 
+                DreamDWello reserves the right to modify these Terms at any time. 
                 We will provide notice of significant changes through the Platform or via email.
                 
                 Your continued use of the Platform after changes become effective constitutes acceptance of the revised Terms. 
@@ -194,7 +194,7 @@ const TermsAndConditions = () => {
 
     const handleDecline = () => {
         const confirmDecline = window.confirm(
-            'Declining our Terms and Conditions will limit your access to PropertyPro features. ' +
+            'Declining our Terms and Conditions will limit your access to DreamDWello features. ' +
             'Are you sure you want to decline?'
         );
         
@@ -212,7 +212,7 @@ const TermsAndConditions = () => {
                 <div className="container">
                     <div className="page-title">
                         <h1>Terms & Conditions</h1>
-                        <p>PropertyPro Real Estate Management System</p>
+                        <p>DreamDWello Real Estate Management System</p>
                     </div>
 
                     <div className="terms-container">
@@ -305,7 +305,7 @@ const TermsAndConditions = () => {
                                         onChange={(e) => setAgreed(e.target.checked)}
                                     />
                                     <label htmlFor="agree-checkbox">
-                                        I have read and agree to the PropertyPro Terms and Conditions
+                                        I have read and agree to the DreamDWello Terms and Conditions
                                     </label>
                                 </div>
                                 
