@@ -233,13 +233,15 @@ const iconMap = {
   "CCTV Surveillance": <FaCamera />,
   "Security Guard": <MdSecurity />,
 
-  // Children Area
-  "Children Play Area": <MdOutlineToys />,
-  "Childrens Play Area": <MdOutlineToys />,
-  "Children's play area": <FaChild />,
-  "Kids Play Area": <MdOutlineToys />,
-  "Kids Zone": <FaChild />,
-  "Playground": <FaChild/>,
+  // Children Play Area
+"Children Play Area": <MdOutlineToys />,
+"Childrens Play Area": <MdOutlineToys />,
+"Children's Play Area": <MdOutlineToys />,
+"Kids Play Area": <MdOutlineToys />,
+"Kids Zone": <FaChild />,
+"Play Area": <FaChild />,
+"Playground": <FaChild />,
+
 
 
   // Internet & Connectivity
@@ -299,7 +301,7 @@ const iconMap = {
   // Green Areas & Gardens
   "Garden": <FaLeaf />,
   "Landscape Garden": <MdOutlineLandscape />,
-  "Green Belt": <FaTree />,
+  "Green Park": <FaTree />,
   "Park": <GiTreehouse />,
   "Central Park": <MdOutlinePark />,
   "Children Park": <GiCastle />,
@@ -380,6 +382,18 @@ const iconMap = {
   "Central AC": <FaSnowflake />,
   "Air Conditioning": <FaSnowflake />,
   "Heating": <FaFire />,
+
+  // Power & Utilities
+  "Underground Electric Line": <MdOutlineElectricBolt />,
+  "Underground Electricity": <MdOutlineElectricBolt />,
+  "Underground Power Line": <MdOutlineElectricBolt />,
+
+  // Open Theater
+  "Open Theater": <GiTheater />,
+  "Open Air Theater": <GiTheater />,
+  "Open Air Cinema": <GiFilmProjector />,
+  "Outdoor Theater": <GiTheater />,
+
 
   // Default
   "DEFAULT": <FaStar />
