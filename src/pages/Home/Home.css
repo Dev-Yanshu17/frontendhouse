@@ -29,14 +29,20 @@
   margin: auto;
 }
 
-/* ================= HERO SLIDER ================= */
+/* ================= HERO SLIDER (PROPER RESPONSIVE FIX) ================= */
+
 .home-page .hero-wrapper {
   position: relative;
-  width: 99%;
-  margin: 20px;
+
+  /* 🔥 FIX: responsive width */
+  width: 100%;
+  max-width: 1480px;
+
+  margin: 20px auto;     /* center horizontally */
   height: 70vh;
   min-height: 420px;
   max-height: 900px;
+
   overflow: hidden;
   border-radius: 0 0 40px 40px;
   box-shadow: var(--shadow-lg);
@@ -94,6 +100,51 @@
 .home-page .hero-content p {
   font-size: 1.3rem;
   max-width: 700px;
+}
+
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .home-page .hero-wrapper {
+    height: 60vh;
+    min-height: 360px;
+  }
+
+  .home-page .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-page .hero-wrapper {
+    height: auto;
+    min-height: unset;
+    aspect-ratio: 16 / 9;   /* 🔥 keeps slider proportional */
+    margin: 0;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .home-page .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-page .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .home-page .hero-wrapper {
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+  }
+
+  .home-page .hero-content h1 {
+    font-size: 1.9rem;
+  }
 }
 
 /* Slider Buttons */
@@ -210,35 +261,51 @@
   box-shadow: var(--shadow);
 }
 
-/* ================= TESTIMONIALS (FIXED & SINGLE) ================= */
+/* ================= TESTIMONIALS ================= */
+
 .home-page .testimonials-section {
   padding: 30px 0;
   background: #ffffff;
 }
 
-.home-page .section-subtitle {
-  font-size: 1rem;
-  color: var(--gray);
-  margin-top: 10px;
+.home-page .section-header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+.home-page .section-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0a4f95;
+}
+
+.home-page .section-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* Viewport */
 .home-page .testimonial-viewport {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Wrapper */
 .home-page .testimonial-track-wrapper {
   max-width: 1040px;
   overflow: hidden;
 }
 
+/* Track */
 .home-page .testimonial-track {
   display: flex;
   gap: 40px;
   transition: transform 0.6s ease-in-out;
 }
 
+/* Card */
 .home-page .testimonial-card {
   width: 320px;
   height: 220px;
@@ -247,38 +314,67 @@
   padding: 28px;
   border-radius: 16px;
   flex-shrink: 0;
+
+  display: flex;                 /* 🔥 KEY */
+  flex-direction: column;        /* 🔥 KEY */
 }
 
+/* Message */
 .home-page .testimonial-text {
   font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f1f5f9;
 }
 
+/* Author fixed at bottom */
 .home-page .testimonial-author {
   display: flex;
+  align-items: center;
   gap: 14px;
+  margin-top: auto;              /* 🔥 PUSH TO BOTTOM */
 }
 
+/* Avatar */
 .home-page .author-avatar {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  background: linear-gradient(135deg, #aec2d7, #038acd);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
 }
 
-/* Arrows */
+/* Author info */
+.home-page .author-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.home-page .author-info p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: #dbeafe;
+}
+
+/* Navigation arrows (if used) */
 .home-page .testimonial-nav {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--secondary);
+  background: #ff7a18;
   color: white;
   font-size: 42px;
   border: none;
   cursor: pointer;
 }
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1200px) {
   .home-page .testimonial-track-wrapper {

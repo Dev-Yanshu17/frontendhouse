@@ -152,10 +152,11 @@
   box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
 }
 
+/* Increased icon size */
 .detail-icon {
-  font-size: 32px;
+  font-size: 200px; /* Increased from 32px */
   color: #3498db;
-  min-width: 40px;
+  min-width: 200px; /* adjust spacing for bigger icon */
 }
 
 .detail-card h3 {

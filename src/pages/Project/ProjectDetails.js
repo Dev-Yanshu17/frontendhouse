@@ -33,7 +33,8 @@ import {
   FaFilm,
   FaChair,
   FaVolumeUp,
-  FaCheckCircle,
+  FaCheckCircle, // ✅ keep only here
+  FaRegCircle,
   FaSpinner,
   FaStar,
   FaArrowLeft,
@@ -67,6 +68,7 @@ import {
   FaChevronRight,
   FaExpand
 } from "react-icons/fa";
+
 
 /* Gi Icons */
 import {
@@ -503,6 +505,7 @@ const ProjectDetails = () => {
             <div className="detail-card"><FaBuilding /> <p>{project.projectType}</p></div>
             <div className="detail-card"><FaMapMarkerAlt /> <p>{project.location}</p></div>
             <div className="detail-card"><FaHome /> <p>{project.totalHouse} Houses</p></div>
+             <div className="detail-card"> <FaRegCircle /><p>{project.status}</p></div>
           </div>
         </div>
 
@@ -573,6 +576,7 @@ const ProjectDetails = () => {
           <img src={currentImage} alt="Floor Plan" />
         </div>
       )}
+      
 {/* ================= MAP CARD ================= */}
 {project.latitude && project.longitude && (
   <div className="map-section" data-aos="fade-up">
