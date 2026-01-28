@@ -26,13 +26,10 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  /* ================= TOUCH SWIPE ================= */
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
-
+  /* ================= RESPONSIVE ================= */
   const isMobile = window.innerWidth <= 768;
   const cardsPerView = isMobile ? 1 : 3;
-  const CARD_WIDTH = 360; // card (320) + gap (40)
+  const CARD_WIDTH = 360;
 
   /* ================= HERO SLIDER DATA ================= */
   const slides = [
@@ -110,54 +107,19 @@ const Home = () => {
     }
   };
 
-  /* ================= TESTIMONIAL CONTROLS ================= */
-  const handleNextTestimonial = () => {
-    if (testimonialIndex < testimonials.length - cardsPerView) {
-      setTestimonialIndex((prev) => prev + 1);
-    }
-  };
-
-  const handlePrevTestimonial = () => {
-    if (testimonialIndex > 0) {
-      setTestimonialIndex((prev) => prev - 1);
-    }
-  };
-
-  /* ================= TESTIMONIAL AUTO PLAY ================= */
+  /* ================= TESTIMONIAL AUTO SLIDE ================= */
   useEffect(() => {
-    if (testimonials.length === 0) return;
+    if (!testimonials.length) return;
 
-    const autoPlay = setInterval(() => {
+    const interval = setInterval(() => {
       setTestimonialIndex((prev) => {
         const maxIndex = testimonials.length - cardsPerView;
-
-        if (prev >= maxIndex) {
-          return 0; // loop back to start
-        }
-
-        return prev + 1;
+        return prev >= maxIndex ? 0 : prev + 1;
       });
-    }, 4000); // 4 seconds
+    }, 4000);
 
-    return () => clearInterval(autoPlay);
+    return () => clearInterval(interval);
   }, [testimonials, cardsPerView]);
-
-
-  /* ================= TOUCH EVENTS ================= */
-  const onTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const onTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const onTouchEnd = () => {
-    const distance = touchStartX.current - touchEndX.current;
-
-    if (distance > 60) handleNextTestimonial();   // swipe left
-    if (distance < -60) handlePrevTestimonial();  // swipe right
-  };
 
   /* ================= JSX ================= */
   return (
@@ -243,23 +205,7 @@ const Home = () => {
           </div>
 
           <div className="testimonial-viewport">
-
-            {!isMobile && (
-              <button
-                className="testimonial-nav left"
-                onClick={handlePrevTestimonial}
-                disabled={testimonialIndex === 0}
-              >
-                ‹
-              </button>
-            )}
-
-            <div
-              className="testimonial-track-wrapper"
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
-            >
+            <div className="testimonial-track-wrapper">
               <div
                 className="testimonial-track"
                 style={{
@@ -269,13 +215,15 @@ const Home = () => {
                 {testimonials.map((item) => (
                   <div className="testimonial-card" key={item._id}>
                     <p className="testimonial-text">“{item.message}”</p>
+
                     <div className="testimonial-author">
                       <div className="author-avatar">
                         {item.name
                           .split(" ")
-                          .map(w => w[0])
+                          .map((w) => w[0])
                           .join("")}
                       </div>
+
                       <div className="author-info">
                         <h4>{item.name}</h4>
                         <p>{item.designation}, {item.location}</p>
@@ -285,17 +233,6 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
-            {!isMobile && (
-              <button
-                className="testimonial-nav right"
-                onClick={handleNextTestimonial}
-                disabled={testimonialIndex >= testimonials.length - cardsPerView}
-              >
-                ›
-              </button>
-            )}
-
           </div>
         </div>
       </section>
