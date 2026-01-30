@@ -147,8 +147,28 @@ const Home = () => {
         </button>
       </section>
 
+
+      {/* ================= INTRODUCTION ================= */}
+<section className="intro-section">
+  <div className="container">
+    <div className="intro-content">
+      <h2>Smart Real Estate Management Made Simple</h2>
+
+      <p>
+        A Real Estate Property Management System is a modern web platform
+        designed to simplify property discovery and management. The system
+        allows users to explore verified property listings, access detailed
+        property information, and communicate directly with the property
+        management team through a centralized and user-friendly interface.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
       {/* ================= PROPERTIES ================= */}
-      <section className="property-section">
+      {/* <section className="property-section"> */}
         <div className="container">
           <div className="section-header">
             <h2>Featured Properties</h2>
@@ -194,10 +214,10 @@ const Home = () => {
             </div>
           )}
         </div>
-      </section>
+      {/* </section> */}
 
       {/* ================= TESTIMONIALS ================= */}
-      <section className="testimonials-section">
+      {/* <section className="testimonials-section"> */}
         <div className="container">
           <div className="section-header">
             <h2>What Our Clients Say</h2>
@@ -235,7 +255,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      {/* </section> */}
 
       {/* ================= CTA ================= */}
       <section className="cta-section">
