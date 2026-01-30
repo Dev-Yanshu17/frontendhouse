@@ -217,45 +217,32 @@ const Home = () => {
       {/* </section> */}
 
       {/* ================= TESTIMONIALS ================= */}
-      {/* <section className="testimonials-section"> */}
-        <div className="container">
-          <div className="section-header">
-            <h2>What Our Clients Say</h2>
-            <p className="section-subtitle">Real feedback from happy customers</p>
-          </div>
+<section className="testimonial-section">
+  <h2>What Our Clients Say</h2>
+  <p className="testimonial-subtitle">
+    Real feedback from happy customers
+  </p>
 
-          <div className="testimonial-viewport">
-            <div className="testimonial-track-wrapper">
-              <div
-                className="testimonial-track"
-                style={{
-                  transform: `translateX(-${testimonialIndex * CARD_WIDTH}px)`
-                }}
-              >
-                {testimonials.map((item) => (
-                  <div className="testimonial-card" key={item._id}>
-                    <p className="testimonial-text">“{item.message}”</p>
+  <div className="testimonial-wrapper">
+    <div className="testimonial-track">
+      {testimonials.concat(testimonials).map((item, index) => (
+        <div className="testimonial-card" key={index}>
+          <p className="testimonial-text">“{item.review}”</p>
 
-                    <div className="testimonial-author">
-                      <div className="author-avatar">
-                        {item.name
-                          .split(" ")
-                          .map((w) => w[0])
-                          .join("")}
-                      </div>
-
-                      <div className="author-info">
-                        <h4>{item.name}</h4>
-                        <p>{item.designation}, {item.location}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="testimonial-author">
+            <div className="author-avatar">
+              {item.name.charAt(0)}
+            </div>
+            <div>
+              <h4>{item.name}</h4>
+              <span>{item.role}</span>
             </div>
           </div>
         </div>
-      {/* </section> */}
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ================= CTA ================= */}
       <section className="cta-section">

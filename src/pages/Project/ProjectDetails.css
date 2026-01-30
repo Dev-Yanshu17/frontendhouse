@@ -1,9 +1,9 @@
 .project-details-container {
-  max-width: 1400px;
+  
   margin: 0 auto;
-  padding: 20px;
+  padding: 100px;
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background: #eef9fb;
 }
 
 /* Back Button */
