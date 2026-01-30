@@ -27,6 +27,7 @@ body {
 .terms-page {
     min-height: 100vh;
     display: flex;
+    background: #eef9fb;
     flex-direction: column;
 }
 
